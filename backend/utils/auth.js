@@ -65,6 +65,6 @@ const requireAuth = [
     }
 ];
 
-//test
+
 
 module.exports = { setTokenCookie, restoreUser, requireAuth };
