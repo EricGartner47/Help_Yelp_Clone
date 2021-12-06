@@ -1,0 +1,31 @@
+.home-page {
+    padding-top: 30px;
+    height: 570px;
+    background-color: #333;
+    background-size: cover;
+    background-position: 50%;
+    color: white;
+}
+
+.home-page-logo{
+    color: white;
+}
+
+.footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.created-by {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(150, 150, 150, 0.4);
+}
+.created-by > li {
+    list-style-type: none;
+    padding: 0px .2rem;
+    font-size: .9rem;
+}
