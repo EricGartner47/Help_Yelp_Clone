@@ -1,4 +1,4 @@
-.login-form {
+/* .login-form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -6,9 +6,9 @@
     height: 60%;
     width: 65%;
     padding: 12px 12px;
-}
+} */
 
-.login-form form {
+.login-form {
     height: 625px;
     width: 700px;
     background-color: #fff;
@@ -20,4 +20,8 @@
     justify-content: flex-start;
     position: relative;
     animation: smooth .25s ease-in-out;
+}
+
+html {
+    background: url(https://c4.wallpaperflare.com/wallpaper/851/447/633/marvel-comics-dc-comics-collage-wonder-woman-wallpaper-preview.jpg);
 }
