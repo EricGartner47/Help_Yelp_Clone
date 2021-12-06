@@ -24,4 +24,11 @@
 
 html {
     background: url(https://c4.wallpaperflare.com/wallpaper/851/447/633/marvel-comics-dc-comics-collage-wonder-woman-wallpaper-preview.jpg);
+    min-height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
