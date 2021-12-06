@@ -1,5 +1,5 @@
 .nav-bar{
-    background-color: white;
+    background-color: #AB0020;
     border-radius: 3px;
     display: flex;
     flex-direction: column;
@@ -15,6 +15,7 @@
 }
 
 .nav-div > a{
+    color: #FACB33;
     text-decoration: none;
     display: flex;
     flex-direction: column;

@@ -1,14 +1,13 @@
 .home-page {
     padding-top: 30px;
     height: 570px;
-    background-color: #333;
+    background-color: #AB0020;
     background-size: cover;
     background-position: 50%;
-    color: white;
 }
 
 .home-page-logo{
-    color: white;
+    color: #FACB33;
 }
 
 .footer {
@@ -22,10 +21,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 1px solid rgba(150, 150, 150, 0.4);
+    background-color: #AB0020;
+    color: #FACB33;
 }
-.created-by > li {
+ a {
     list-style-type: none;
     padding: 0px .2rem;
     font-size: .9rem;
+    color: #FACB33;
 }
