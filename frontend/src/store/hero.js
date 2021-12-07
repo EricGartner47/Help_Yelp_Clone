@@ -15,13 +15,18 @@ export const getHeros = () => async dispatch => {
     }
 }
 
-// const initialState = {
-//     list: []
-// }
+const initialState = {
+    list: []
+}
+
+const sortList = (list) => {
+    return list.sort((heroA, heroB) => {
+      return heroA.number - heroB.number;
+    }).map((hero) => hero.id);
+};
 
 
-
-const heroReducer = (state = {}, action) => {
+const heroReducer = (state = initialState, action) => {
     switch(action.type) {
         case LOAD:
             const allHeros = {}
@@ -31,6 +36,7 @@ const heroReducer = (state = {}, action) => {
             return {
                 ...allHeros,
                 ...state,
+                list: sortList(action.list)
             }
         default:
             return state;

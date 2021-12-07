@@ -8,10 +8,8 @@ import "./HomePage.css"
 function HomePage() {
     const dispatch = useDispatch();
     const heros = useSelector(state => {
-        // return state.hero.list.map(heroId => state.hero[heroId]);
-        return state.hero
+        return state.hero.list.map(heroId => state.hero[heroId]);
       });
-    // console.log(heros, 'hello')
 
 
     useEffect(()=>{
@@ -34,11 +32,14 @@ function HomePage() {
                     <button className="fas fa-mask" type="submit"/>
                 </form>
                 <div>
-                {/* {heros.map(hero => {
+                {heros.map(hero => {
                     return (
-                        <div>{hero.title}</div>
-                    )
-                })} */}
+                        <div>
+                            <a>{hero.title}</a>
+                            <span>{hero.description}</span>
+                        </div>
+                        )
+                })}
                 </div>
             </div>
             <div className="footer">
