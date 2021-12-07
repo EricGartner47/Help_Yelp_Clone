@@ -16,19 +16,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      address: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
       city: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
-      state: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
-      zipCode: {
         allowNull: false,
         type: Sequelize.STRING
       },
