@@ -5,6 +5,7 @@ const { setTokenCookie, restoreUser } = require('../../utils/auth');
 const { User } = require('../../db/models');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
+const { db } = require('../../config');
 
 const router = express.Router();
 
@@ -66,5 +67,12 @@ router.get(
       } else return res.json({});
     }
 );
+
+// Demo user
+router.post('/demo', asyncHandler(async(req, res)=> {
+  const user = await User.login('Demo-lition', 'password')
+  await setTokenCookie(res, user);
+  return res.json({user});
+}))
 
 module.exports = router;
