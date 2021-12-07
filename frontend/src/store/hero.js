@@ -15,11 +15,13 @@ export const getHeros = () => async dispatch => {
     }
 }
 
-const initialState = {
-    list: []
-}
+// const initialState = {
+//     list: []
+// }
 
-const heroReducer = (state = initialState, action) => {
+
+
+const heroReducer = (state = {}, action) => {
     switch(action.type) {
         case LOAD:
             const allHeros = {}
@@ -28,7 +30,7 @@ const heroReducer = (state = initialState, action) => {
             });
             return {
                 ...allHeros,
-                ...state
+                ...state,
             }
         default:
             return state;

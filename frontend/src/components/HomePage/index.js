@@ -7,7 +7,9 @@ import "./HomePage.css"
 
 function HomePage() {
     const dispatch = useDispatch();
-    const heros = useSelector(state => state.list)
+    const heros = useSelector(state => state.hero);
+    // console.log(heros, 'hello')
+
 
     useEffect(()=>{
         dispatch(getHeros())
@@ -29,7 +31,11 @@ function HomePage() {
                     <button className="fas fa-mask" type="submit"/>
                 </form>
                 <div>
-
+                {/* {heros.map(hero => {
+                    return (
+                        <div>{hero.title}</div>
+                    )
+                })} */}
                 </div>
             </div>
             <div className="footer">
