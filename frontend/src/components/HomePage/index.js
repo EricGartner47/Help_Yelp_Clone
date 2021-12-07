@@ -7,7 +7,10 @@ import "./HomePage.css"
 
 function HomePage() {
     const dispatch = useDispatch();
-    const heros = useSelector(state => state.hero);
+    const heros = useSelector(state => {
+        // return state.hero.list.map(heroId => state.hero[heroId]);
+        return state.hero
+      });
     // console.log(heros, 'hello')
 
 
