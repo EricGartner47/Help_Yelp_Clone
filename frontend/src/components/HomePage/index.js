@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import * as sessionActions from '../../store/session';
-import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+// import * as sessionActions from '../../store/session';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { Redirect } from 'react-router-dom';
 import "./HomePage.css"
 
 function HomePage() {
@@ -12,7 +12,7 @@ function HomePage() {
                     <h1 className="home-page-logo">Help!</h1>
                 </div>
                 <form>
-                    <input placeholder="Here to help"/>
+                    <input className="search-bar" placeholder="Here to help"/>
                     <button className="fas fa-mask" type="submit"/>
                 </form>
             </div>

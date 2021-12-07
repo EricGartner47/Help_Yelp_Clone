@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import HomePage from "./components/HomePage"
+import CreateHeroPage from "./components/CreateHeroPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route exact pathy ="/">
             <HomePage />
+          </Route>
+          <Route>
+            <CreateHeroPage />
           </Route>
         </Switch>
       )}

@@ -27,10 +27,6 @@ function LoginFormPage() {
 
   return (
     <div>
-      {/* <img
-        src="https://img.wallpapersafari.com/desktop/1920/1080/89/91/wCnjdV.jpg"
-        alt="Hero Wallpaper"
-      /> */}
       <div className="login-form">
         <form
         onSubmit={handleSubmit}>
@@ -63,4 +59,3 @@ function LoginFormPage() {
 }
 
 export default LoginFormPage;
-
