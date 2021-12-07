@@ -1,15 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 // import { Redirect } from 'react-router-dom';
+import { getHeros } from '../../store/hero';
 import "./HomePage.css"
 
 function HomePage() {
     const dispatch = useDispatch();
+    const heros = useSelector(state => state.list)
+
+    useEffect(()=>{
+        dispatch(getHeros())
+    }, [dispatch])
+
     const handleSubmit = (e) => {
         e.preventDefault();
         return dispatch(sessionActions.login({ credential: 'Demo-lition', password: 'password' }))
-      }
+    }
 
     return (
         <div>
@@ -21,6 +28,9 @@ function HomePage() {
                     <input className="search-bar" placeholder="Here to help"/>
                     <button className="fas fa-mask" type="submit"/>
                 </form>
+                <div>
+
+                </div>
             </div>
             <div className="footer">
                 <ul className="created-by"> Created by Eric Gartner

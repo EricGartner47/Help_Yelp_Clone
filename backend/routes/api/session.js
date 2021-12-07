@@ -69,7 +69,7 @@ router.get(
 );
 
 // Demo user
-router.post('/demo', asyncHandler(async(req, res)=> {
+router.post('/', asyncHandler(async(req, res)=> {
   const user = await User.login('Demo-lition', 'password')
   await setTokenCookie(res, user);
   return res.json({user});

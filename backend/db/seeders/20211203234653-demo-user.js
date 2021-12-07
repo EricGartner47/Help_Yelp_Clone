@@ -13,16 +13,23 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        username: 'FakeUser1',
-        email: faker.internet.email(),
-        hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        username: 'Bats',
+        email: 'batman@batman.com',
+        hashedPassword: bcrypt.hashSync('detective'),
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        username: 'FakeUser2',
-        email: faker.internet.email(),
-        hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        username: 'Supes',
+        email: 'supes@supes.com',
+        hashedPassword: bcrypt.hashSync('krypton'),
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        username: 'WonderWoman',
+        email: 'wonderwoman@ww.com',
+        hashedPassword: bcrypt.hashSync('hippolyta'),
         createdAt: new Date(),
         updatedAt: new Date()
       }
@@ -32,7 +39,7 @@ module.exports = {
   down: (queryInterface, Sequelize) => {
     const Op = Sequelize.Op;
     return queryInterface.bulkDelete('Users', {
-      username: { [Op.in]: ['Demo-lition', 'FakeUser1', 'FakeUser2'] }
+      username: { [Op.in]: ['Demo-lition', 'Bats', 'Supes', 'WonderWoman'] }
     }, {});
   }
 }

@@ -30,14 +30,14 @@ module.exports = {
       },
       zipCode: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       powers: {
         allowNull: false,
         type: Sequelize.STRING
       },
       heroId:{
-        onDelete: 'CASCADE', 
+        onDelete: 'CASCADE',
         allowNull:false,
         type: Sequelize.INTEGER,
         references: {model: 'Users'}

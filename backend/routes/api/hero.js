@@ -1,0 +1,16 @@
+const express = require('express');
+const asyncHandler = require('express-async-handler');
+
+const { setTokenCookie, requireAuth } = require('../../utils/auth');
+const { Hero  } = require('../../db/models');
+const { check } = require('express-validator');
+const { handleValidationErrors } = require('../../utils/validation');
+
+const router = express.Router();
+
+router.get('/', asyncHandler(async function( req, res) {
+    const heros = await Hero.findAll();
+    return res.json(heros);
+  }));
+
+module.exports = router
