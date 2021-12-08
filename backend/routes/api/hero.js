@@ -31,6 +31,12 @@ router.get('/', asyncHandler(async function( req, res) {
     return res.json(heros);
 }));
 
+// Single Hero Page
+router.get('/:id', asyncHandler(async function(req, res) {
+  const hero = await Hero.findByPk(req.params.id)
+  return res.json({hero})
+}))
+
 // Create a Hero
 router.post('/', heroValidators, asyncHandler(async (req, res) => {
   const {user, title, description, city, powers} = req.body;
