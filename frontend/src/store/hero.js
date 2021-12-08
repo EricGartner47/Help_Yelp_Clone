@@ -1,3 +1,5 @@
+import { csrfFetch } from './csrf';
+
 const LOAD = 'hero/LOAD'
 const ADD_ONE = 'hero/ADD'
 
@@ -20,11 +22,12 @@ export const getHeros = () => async dispatch => {
 }
 
 export const createHero = (newHero) => async dispatch => {
-    const response = await fetch(`/api/hero`, {
+    const response = await csrfFetch(`/api/hero`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(newHero)
     });
+
     const hero = await response.json();
     if(response.ok) {
         dispatch(addHero(hero));

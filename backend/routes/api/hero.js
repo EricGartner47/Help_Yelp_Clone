@@ -1,11 +1,13 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
+// const csrf = require('csurf')
 
 const { Hero  } = require('../../db/models');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 
 const router = express.Router();
+// const csrfProtection = csrf({ cookie: true });
 
 const heroValidators = [
   check('title')
@@ -30,8 +32,9 @@ router.get('/', asyncHandler(async function( req, res) {
 }));
 
 // Create a Hero
-router.post('/', heroValidators, asyncHandler(async (req, res ) => {
+router.post('/', heroValidators, asyncHandler(async (req, res) => {
   const {user, title, description, city, powers} = req.body;
+  const { token } = req.cookies
   const newHero = await Hero.create({
     title,
     description,
@@ -39,8 +42,7 @@ router.post('/', heroValidators, asyncHandler(async (req, res ) => {
     powers,
     heroId: user.id
   })
-  await setTokenCookie(res, user);
-  return res.json({newHero})
+  return res.json({newHero, token})
 }))
 
 module.exports = router
