@@ -3,10 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   const Hero = sequelize.define('Hero', {
     title: DataTypes.STRING,
     description: DataTypes.STRING,
-    address: DataTypes.STRING,
     city: DataTypes.STRING,
-    state: DataTypes.STRING,
-    zipCode: DataTypes.STRING,
     powers: DataTypes.STRING,
     heroId: DataTypes.INTEGER
   }, {});

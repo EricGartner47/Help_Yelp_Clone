@@ -1,7 +1,8 @@
 .signup-form{
     height: 625px;
     width: 700px;
-    background-color: #fff;
+    background-color: #AB0020;
+    color: #FACB33;
     border-radius: 3px;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, .4);
     display: flex;

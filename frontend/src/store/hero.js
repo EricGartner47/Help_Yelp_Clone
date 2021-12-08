@@ -1,10 +1,14 @@
-
-
 const LOAD = 'hero/LOAD'
+const ADD_ONE = 'hero/ADD'
 
 const load = list => ({
     type: LOAD,
     list
+})
+
+const addHero = hero => ({
+    type: ADD_ONE,
+    hero
 })
 
 export const getHeros = () => async dispatch => {
@@ -12,6 +16,19 @@ export const getHeros = () => async dispatch => {
     if(response.ok) {
         const list = await response.json();
         dispatch(load(list))
+    }
+}
+
+export const createHero = (newHero) => async dispatch => {
+    const response = await fetch(`/api/hero`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(newHero)
+    });
+    const hero = await response.json();
+    if(response.ok) {
+        dispatch(addHero(hero));
+        return hero;
     }
 }
 
@@ -38,6 +55,24 @@ const heroReducer = (state = initialState, action) => {
                 ...state,
                 list: sortList(action.list)
             }
+        case ADD_ONE:
+            if (!state[action.hero.id]) {
+                const newState = {
+                  ...state,
+                  [action.hero.id]: action.hero
+                };
+                const heroList = newState.list.map(id => newState[id]);
+                heroList.push(action.hero);
+                newState.list = sortList(heroList);
+                return newState;
+              }
+              return {
+                ...state,
+                [action.hero.id]: {
+                  ...state[action.hero.id],
+                  ...action.hero
+                }
+              };
         default:
             return state;
     }
