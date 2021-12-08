@@ -10,6 +10,7 @@ function CreateHeroPage() {
     const [description, setDescription] = useState('');
     const [city, setCity] = useState('');
     const [powers, setPowers] = useState('');
+    const [errors, setErrors] = useState([]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -19,7 +20,10 @@ function CreateHeroPage() {
             city,
             powers
         }
-        return dispatch(createHero(payload))
+        return dispatch(createHero(payload)).catch(async (res) => {
+            const data = await res.json();
+            if (data && data.errors) setErrors(data.errors);
+          });
       }
 
     return (
@@ -27,6 +31,9 @@ function CreateHeroPage() {
             <form
                 className="create-hero-form"
                 onSubmit={handleSubmit}>
+                <ul>
+                {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+                </ul>
                 <label>Become A Hero</label>
                 <div className="title-container">
                     <label for="title">Title</label>
@@ -43,6 +50,7 @@ function CreateHeroPage() {
                     <textarea
                         name="description"
                         cols="20" rows="2"
+                        // style="margin: 0px; width: 493px; height: 62px;"
                         value={description}
                         onChange={(e)=> setDescription(e.target.value)}
                     />
@@ -66,7 +74,7 @@ function CreateHeroPage() {
                         />
                 </div>
                 <div>
-                    <button type="submit">Create Hero</button>
+                    <button className="create-hero-button"type="submit">Create Hero</button>
                 </div>
             </form>
         </div>

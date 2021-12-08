@@ -9,8 +9,8 @@
 } */
 
 .login-form {
-    height: 625px;
-    width: 700px;
+    height: 525px;
+    width: 500px;
     background-color: #AB0020;
     color: #FACB33;
     border-radius: 3px;
@@ -33,4 +33,9 @@ body {
     justify-content: center;
     align-items: center;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.login-button {
+    background-color: #AB0020;
+    color: #FACB33;
 }

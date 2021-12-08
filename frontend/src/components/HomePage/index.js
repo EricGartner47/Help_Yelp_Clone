@@ -29,7 +29,7 @@ function HomePage() {
                 </div>
                 <form className="search-bar">
                     <input className="search-input" placeholder="Here to help"/>
-                    <button className="fas fa-mask" type="submit"/>
+                    <button className="fas fa-mask" type="submit" id="hero mask"/>
                 </form>
                 <div>
                 {heros.map(hero => {
@@ -48,10 +48,10 @@ function HomePage() {
                         <a href="https://github.com/EricGartner47">Github</a>
                     </li>
                 </ul>
-                <div>
                     <form onSubmit={handleSubmit}>
-                        <button>Demo User</button>
+                        <button className="demo-button">Demo User</button>
                     </form>
+                <div>
                 </div>
             </div>
         </div>
