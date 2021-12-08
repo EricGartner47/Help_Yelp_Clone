@@ -2,6 +2,7 @@ import { csrfFetch } from './csrf';
 
 const LOAD_ALL = 'hero/LOAD_ALL'
 const ADD_HERO = 'hero/ADD'
+const REMOVE_HERO = 'hero/REMOVE_HERO'
 
 const load_all = list => ({
     type: LOAD_ALL,
@@ -12,6 +13,11 @@ const addHero = hero => ({
     type: ADD_HERO,
     hero
 })
+
+export const removeHero = heroId => ({
+    type: REMOVE_HERO,
+    heroId
+});
 
 export const getHeros = () => async dispatch => {
     const response = await fetch(`api/hero`);
@@ -56,16 +62,18 @@ const heroReducer = (state = initialState, action) => {
             return {
                 ...allHeros,
                 ...state,
-                list: sortList(action.list)
-            }
+                list: sortList(action.list)};
         case ADD_HERO:
               return {
                 ...state,
                 [action.hero.id]: {
                   ...state[action.hero.id],
                   ...action.hero
-                }
-              };
+                }};
+        case REMOVE_HERO:
+            const newState = {...state};
+            delete newState[action.heroId]
+            return newState.list = state.list.filter(heroId => heroId !== action.heroId)
         default:
             return state;
     }
