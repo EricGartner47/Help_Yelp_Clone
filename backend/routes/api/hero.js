@@ -1,12 +1,15 @@
 const express = require('express');
+const router = express.Router();
 const asyncHandler = require('express-async-handler');
 // const csrf = require('csurf')
 
-const { Hero  } = require('../../db/models');
+const jwt = require('jsonwebtoken');
+const { jwtConfig } = require('../../config')
+const { secret, expiresIn } = jwtConfig;
+const { Hero, User  } = require('../../db/models');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 
-const router = express.Router();
 // const csrfProtection = csrf({ cookie: true });
 
 const heroValidators = [
@@ -39,16 +42,30 @@ router.get('/:id', asyncHandler(async function(req, res) {
 
 // Create a Hero
 router.post('/', heroValidators, asyncHandler(async (req, res) => {
-  const {user, title, description, city, powers} = req.body;
-  const { token } = req.cookies
+  const { token } = req.cookies;
+  const user = jwt.verify(token, secret)
+  const { title, description, city, powers} = req.body;
   const newHero = await Hero.create({
     title,
     description,
     city,
     powers,
-    heroId: user.id
+    heroId: user.data.id
   })
   return res.json({newHero, token})
+}))
+
+// Edit a Hero
+router.put('/:id/edit', heroValidators, asyncHandler(async (req, res) =>{
+  const { token } = req.cookies;
+  const user = jwt.verify(token, secret)
+  const {title, description, city, powers} = req.body;
+
+}))
+
+// Delete a Hero
+router.delete('/:id/delete', asyncHandler(async (req, res) => {
+  
 }))
 
 module.exports = router

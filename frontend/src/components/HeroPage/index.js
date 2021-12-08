@@ -12,7 +12,7 @@ function HeroPage() {
                 <p>Hero's City</p>
                 <p>Hero's Powers</p>
                 <a>Edit</a>
-                <a>Delete</a>
+                <a href="">Delete</a>
         </div>
     )
 

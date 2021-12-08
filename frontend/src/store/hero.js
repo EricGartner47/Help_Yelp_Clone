@@ -58,21 +58,14 @@ const heroReducer = (state = initialState, action) => {
                 ...state,
                 list: sortList(action.list)
             }
-        // case ADD_ONE:
-        //     if (!state[action.id]) {
-        //         const newState = {
-        //           ...state,
-        //           [action.id]: action.hero
-        //         };
-        //         return newState;
-        //       }
-        //       return {
-        //         ...state,
-        //         [action.hero.id]: {
-        //           ...state[action.hero.id],
-        //           ...action.hero
-        //         }
-        //       };
+        case ADD_HERO:
+              return {
+                ...state,
+                [action.hero.id]: {
+                  ...state[action.hero.id],
+                  ...action.hero
+                }
+              };
         default:
             return state;
     }
