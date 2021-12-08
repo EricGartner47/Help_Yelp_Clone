@@ -27,16 +27,16 @@ function HomePage() {
                 <div>
                     <h1 className="home-page-logo">Help!</h1>
                 </div>
-                <form>
-                    <input className="search-bar" placeholder="Here to help"/>
+                <form className="search-bar">
+                    <input className="search-input" placeholder="Here to help"/>
                     <button className="fas fa-mask" type="submit"/>
                 </form>
                 <div>
                 {heros.map(hero => {
                     return (
-                        <div>
-                            <a>{hero.title}</a>
-                            <span>{hero.description}</span>
+                        <div className="hero-container">
+                            <a className="hero-title">{hero.title}</a>
+                            <span className="hero-description">{hero.description}</span>
                         </div>
                         )
                 })}

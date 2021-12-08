@@ -59,14 +59,11 @@ const heroReducer = (state = initialState, action) => {
                 list: sortList(action.list)
             }
         case ADD_ONE:
-            if (!state[action.hero.id]) {
+            if (!state[action.id]) {
                 const newState = {
                   ...state,
-                  [action.hero.id]: action.hero
+                  [action.id]: action.hero
                 };
-                const heroList = newState.list.map(id => newState[id]);
-                heroList.push(action.hero);
-                newState.list = sortList(heroList);
                 return newState;
               }
               return {

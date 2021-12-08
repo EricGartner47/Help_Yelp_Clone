@@ -39,10 +39,10 @@ function CreateHeroPage() {
                         />
                 </div>
                 <div className="description-container">
-                    <label for="description">description</label>
+                    <label for="description">Your Motto</label>
                     <textarea
                         name="description"
-                        cols="80" rows="8"
+                        cols="20" rows="2"
                         value={description}
                         onChange={(e)=> setDescription(e.target.value)}
                     />
@@ -66,7 +66,7 @@ function CreateHeroPage() {
                         />
                 </div>
                 <div>
-                    <button type="submit">Submit</button>
+                    <button type="submit">Create Hero</button>
                 </div>
             </form>
         </div>
