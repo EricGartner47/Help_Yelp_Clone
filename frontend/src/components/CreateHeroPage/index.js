@@ -79,7 +79,7 @@ function CreateHeroPage() {
             </form>
         </div>
     )
-//test2
+
 }
 
 export default CreateHeroPage;

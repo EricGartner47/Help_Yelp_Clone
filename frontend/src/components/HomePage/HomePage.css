@@ -54,7 +54,10 @@
     left: 40%;
     background-color: #AB0020;
     color: #FACB33;
+}
 
+.demo-button:hover{
+    cursor: pointer;
 }
 
  a {
@@ -62,4 +65,9 @@
     padding: 0px .2rem;
     font-size: .9rem;
     color: #FACB33;
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
 }

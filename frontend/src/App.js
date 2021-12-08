@@ -5,6 +5,7 @@ import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import HomePage from "./components/HomePage"
 import CreateHeroPage from "./components/CreateHeroPage";
+import HeroPage from "./components/HeroPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route path="/create-hero">
             <CreateHeroPage />
+          </Route>
+          <Route path="/hero/:id">
+            <HeroPage />
           </Route>
           <Route>
             <h2>Page Not Found</h2>

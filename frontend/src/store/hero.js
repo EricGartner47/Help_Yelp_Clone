@@ -1,7 +1,7 @@
 import { csrfFetch } from './csrf';
 
 const LOAD = 'hero/LOAD'
-const ADD_ONE = 'hero/ADD'
+const ADD_HERO = 'hero/ADD'
 
 const load = list => ({
     type: LOAD,
@@ -9,7 +9,7 @@ const load = list => ({
 })
 
 const addHero = hero => ({
-    type: ADD_ONE,
+    type: ADD_HERO,
     hero
 })
 
@@ -58,21 +58,21 @@ const heroReducer = (state = initialState, action) => {
                 ...state,
                 list: sortList(action.list)
             }
-        case ADD_ONE:
-            if (!state[action.id]) {
-                const newState = {
-                  ...state,
-                  [action.id]: action.hero
-                };
-                return newState;
-              }
-              return {
-                ...state,
-                [action.hero.id]: {
-                  ...state[action.hero.id],
-                  ...action.hero
-                }
-              };
+        // case ADD_ONE:
+        //     if (!state[action.id]) {
+        //         const newState = {
+        //           ...state,
+        //           [action.id]: action.hero
+        //         };
+        //         return newState;
+        //       }
+        //       return {
+        //         ...state,
+        //         [action.hero.id]: {
+        //           ...state[action.hero.id],
+        //           ...action.hero
+        //         }
+        //       };
         default:
             return state;
     }

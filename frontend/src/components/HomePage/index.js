@@ -35,7 +35,7 @@ function HomePage() {
                 {heros.map(hero => {
                     return (
                         <div className="hero-container">
-                            <a className="hero-title">{hero.title}</a>
+                            <a href={`/hero/${hero.id}`} className="hero-title">{hero.title}</a>
                             <span className="hero-description">{hero.description}</span>
                         </div>
                         )
@@ -46,6 +46,7 @@ function HomePage() {
                 <ul className="created-by"> Created by Eric Gartner
                     <li>
                         <a href="https://github.com/EricGartner47">Github</a>
+                        <a href="https://www.linkedin.com/in/eric-gartner-731907a0/">Linked In</a>
                     </li>
                 </ul>
                     <form onSubmit={handleSubmit}>
