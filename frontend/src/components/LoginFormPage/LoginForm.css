@@ -32,7 +32,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-family: 'Bangers', cursive;
 }
 
 .login-button {

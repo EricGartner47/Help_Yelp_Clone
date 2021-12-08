@@ -1,10 +1,10 @@
 import { csrfFetch } from './csrf';
 
-const LOAD = 'hero/LOAD'
+const LOAD_ALL = 'hero/LOAD_ALL'
 const ADD_HERO = 'hero/ADD'
 
-const load = list => ({
-    type: LOAD,
+const load_all = list => ({
+    type: LOAD_ALL,
     list
 })
 
@@ -17,7 +17,7 @@ export const getHeros = () => async dispatch => {
     const response = await fetch(`api/hero`);
     if(response.ok) {
         const list = await response.json();
-        dispatch(load(list))
+        dispatch(load_all(list))
     }
 }
 
@@ -48,7 +48,7 @@ const sortList = (list) => {
 
 const heroReducer = (state = initialState, action) => {
     switch(action.type) {
-        case LOAD:
+        case LOAD_ALL:
             const allHeros = {}
             action.list.forEach(hero => {
                 allHeros[hero.id] = hero

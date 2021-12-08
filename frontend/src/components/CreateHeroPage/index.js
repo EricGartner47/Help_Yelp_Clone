@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import {createHero} from '../../store/hero';
 import "./CreateHeroPage.css"
 
@@ -11,6 +11,7 @@ function CreateHeroPage() {
     const [city, setCity] = useState('');
     const [powers, setPowers] = useState('');
     const [errors, setErrors] = useState([]);
+    const history = useHistory()
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -20,6 +21,7 @@ function CreateHeroPage() {
             city,
             powers
         }
+        history.push('/')
         return dispatch(createHero(payload)).catch(async (res) => {
             const data = await res.json();
             if (data && data.errors) setErrors(data.errors);
