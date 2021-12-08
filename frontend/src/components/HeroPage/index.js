@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { useParams} from 'react-router-dom';
 import "./HeroPage.css"
 
 function HeroPage() {
+    const id = useParams()
+    const hero = useSelector(state => state.hero[id])
+    console.log(hero)
+
 
     return(
         <div className="hero-page">
