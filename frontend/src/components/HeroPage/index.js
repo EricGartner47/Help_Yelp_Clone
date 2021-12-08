@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory} from 'react-router-dom';
-import { removeHero } from '../../store/hero';
+import { deleteHero} from '../../store/hero';
 import "./HeroPage.css"
 
 function HeroPage() {
@@ -11,7 +11,7 @@ function HeroPage() {
     const dispatch = useDispatch()
 
     const removeHeroButton = () => {
-        dispatch(removeHero(hero.id))
+        dispatch(deleteHero(hero.id))
         history.push('/')
     }
 

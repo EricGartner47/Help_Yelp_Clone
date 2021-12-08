@@ -14,7 +14,7 @@ const addHero = hero => ({
     hero
 })
 
-export const removeHero = heroId => ({
+const removeHero = heroId => ({
     type: REMOVE_HERO,
     heroId
 });
@@ -38,6 +38,17 @@ export const createHero = (newHero) => async dispatch => {
     if(response.ok) {
         dispatch(addHero(hero));
         return hero;
+    }
+}
+
+export const deleteHero = (id) => async dispatch => {
+    const response = await csrfFetch(`/api/hero/${id}`, {
+        method: 'DELETE'
+    });
+    const deletedHero = await response.json();
+    if(response.ok) {
+        dispatch(removeHero(deletedHero))
+        return deletedHero;
     }
 }
 
@@ -73,7 +84,8 @@ const heroReducer = (state = initialState, action) => {
         case REMOVE_HERO:
             const newState = {...state};
             delete newState[action.heroId]
-            return newState.list = state.list.filter(heroId => heroId !== action.heroId)
+            newState.list = state.list.filter(heroId => heroId !== action.heroId)
+            return newState
         default:
             return state;
     }

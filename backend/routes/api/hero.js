@@ -67,7 +67,7 @@ router.put('/:id/edit', heroValidators, asyncHandler(async (req, res) =>{
 router.delete('/:id', asyncHandler(async (req, res) => {
   const deleteHero = await Hero.findByPk(req.params.id)
   await deleteHero.destroy()
-  return res.json({message: 'success'})
+  return res.json({deleteHero})
 }))
 
 module.exports = router
