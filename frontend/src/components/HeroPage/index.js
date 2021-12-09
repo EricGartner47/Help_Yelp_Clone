@@ -11,8 +11,9 @@ function HeroPage() {
     const dispatch = useDispatch()
     const sessionUser = useSelector(state=> state.session.user)
 
-    if(sessionUser === null){
+    if(!sessionUser){
         history.push('/')
+        alert('Please log in to view a Hero')
     }
 
     const removeHeroButton = () => {
@@ -30,11 +31,11 @@ function HeroPage() {
                 <p>{hero.city}</p>
                 <label>Abilities</label>
                 <p>{hero.powers}</p>
-                {sessionUser.id === hero.heroId &&
+                {sessionUser ? sessionUser.id === hero.heroId &&
                     <>
                      <button className="edit-hero-link"><NavLink to={`/hero/edit/${hero.id}`}>Edit</NavLink></button>
                      <button className="delete-hero-button"onClick={removeHeroButton}>Delete</button>
-                    </>
+                    </> : <> </>
                 }
         </div>
     )
