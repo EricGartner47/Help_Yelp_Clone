@@ -13,6 +13,7 @@ function EditHeroPage() {
     const [city, setCity] = useState(hero.city);
     const [powers, setPowers] = useState(hero.powers);
     const [errors, setErrors] = useState([]);
+    const history = useHistory();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -23,7 +24,7 @@ function EditHeroPage() {
             city,
             powers
         }
-
+        history.push('/')
         return dispatch(updateHero(payload)).catch(async (res) => {
             const data = await res.json();
             if (data && data.errors) setErrors(data.errors);
