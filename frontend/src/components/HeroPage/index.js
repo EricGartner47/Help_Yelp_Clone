@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, useHistory} from 'react-router-dom';
-import { deleteHero, updateHero} from '../../store/hero';
+import { useParams, useHistory, NavLink} from 'react-router-dom';
+import { deleteHero} from '../../store/hero';
 import "./HeroPage.css"
 
 function HeroPage() {
@@ -15,10 +15,6 @@ function HeroPage() {
         history.push('/')
     }
 
-    const updateHeroButton = () => {
-        dispatch(updateHero(hero))
-    }
-
 
     return(
         <div className="hero-page">
@@ -29,7 +25,7 @@ function HeroPage() {
                 <p>{hero.city}</p>
                 <label>Abilities</label>
                 <p>{hero.powers}</p>
-                    <button onClick={updateHeroButton}>Edit</button>
+                    <button><NavLink to={`/editHero/${hero.id}`}>Edit</NavLink></button>
                     <button onClick={removeHeroButton}>Delete</button>
 
 

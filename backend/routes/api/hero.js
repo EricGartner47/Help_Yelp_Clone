@@ -64,7 +64,8 @@ router.put('/:id', heroValidators, asyncHandler(async (req, res) =>{
     title,
     description,
     city,
-    powers
+    powers,
+    heroId: user.data.id
   })
   return res.json({updatedHero, token})
 }))

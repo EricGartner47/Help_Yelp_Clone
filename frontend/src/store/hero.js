@@ -58,11 +58,11 @@ export const deleteHero = (id) => async dispatch => {
     }
 }
 
-export const updateHero = (hero) => async dispatch => {
-    const response = await csrfFetch(`/api/hero/${hero.id}`, {
+export const updateHero = (payload) => async dispatch => {
+    const response = await csrfFetch(`/api/hero/${payload.hero.id}`, {
         method: 'PUT',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(hero)
+        body: JSON.stringify(payload)
     });
     const upToDateHero = await response.json();
     if(response.ok) {
@@ -105,6 +105,13 @@ const heroReducer = (state = initialState, action) => {
             delete newState[action.heroId]
             newState.list = state.list.filter(heroId => heroId !== action.heroId)
             return newState
+        case UPDATE_HERO:
+            return {
+                ...state,
+                [action.hero.id]: {
+                  ...state[action.hero.id],
+                  ...action.hero
+                }};
         default:
             return state;
     }

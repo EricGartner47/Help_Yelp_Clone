@@ -1,47 +1,48 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import {createHero} from '../../store/hero';
-import "./CreateHeroPage.css"
+import { useHistory, useParams } from 'react-router-dom';
+import {createHero, updateHero} from '../../store/hero';
+import "./EditHeroPage.css"
 
-function CreateHeroPage() {
-    const dispatch = useDispatch()
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
-    const [city, setCity] = useState('');
-    const [powers, setPowers] = useState('');
+function EditHeroPage() {
+    const dispatch = useDispatch();
+    const { id } = useParams();
+    const hero = useSelector(state => state.hero[id])
+    const [title, setTitle] = useState(hero.title);
+    const [description, setDescription] = useState(hero.description);
+    const [city, setCity] = useState(hero.city);
+    const [powers, setPowers] = useState(hero.powers);
     const [errors, setErrors] = useState([]);
-    const history = useHistory()
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const payload = {
+            hero,
             title,
             description,
             city,
             powers
         }
-            // history.push('/')
-        return dispatch(createHero(payload)).catch(async (res) => {
+
+        return dispatch(updateHero(payload)).catch(async (res) => {
             const data = await res.json();
             if (data && data.errors) setErrors(data.errors);
-        });
-      }
+          });
+    }
 
     return (
-        <div>
+        <>
             <form
-                className="create-hero-form"
+                className="edit-hero-form"
                 onSubmit={handleSubmit}>
                 <ul>
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
                 </ul>
-                <label>Become A Hero</label>
+                <label>Update Your Hero</label>
                 <div className="title-container">
                     <label for="title">Title</label>
                     <input
                         type="text"
-                        placeholder="Your Title"
                         name="title"
                         value={title}
                         onChange={(e)=> setTitle(e.target.value)}
@@ -52,7 +53,6 @@ function CreateHeroPage() {
                     <textarea
                         name="description"
                         cols="20" rows="2"
-                        // style="margin: 0px; width: 493px; height: 62px;"
                         value={description}
                         onChange={(e)=> setDescription(e.target.value)}
                     />
@@ -76,12 +76,11 @@ function CreateHeroPage() {
                         />
                 </div>
                 <div>
-                    <button className="create-hero-button"type="submit">Create Hero</button>
+                    <button className="update-hero-button"type="submit">Update Hero</button>
                 </div>
             </form>
-        </div>
+        </>
     )
-
 }
 
-export default CreateHeroPage;
+export default EditHeroPage;
