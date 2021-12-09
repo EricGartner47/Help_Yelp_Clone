@@ -11,15 +11,15 @@ function HeroPage() {
     const dispatch = useDispatch()
     const sessionUser = useSelector(state=> state.session.user)
 
+    if(sessionUser === null){
+        history.push('/')
+    }
+
     const removeHeroButton = () => {
         dispatch(deleteHero(hero.id))
         history.push('/')
     }
 
-    // if(sessionUser === null){
-    //     history.push('/')
-    // }
-    // console.log(sessionUser)
 
     return(
         <div className="hero-page">
