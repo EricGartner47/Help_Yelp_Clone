@@ -30,11 +30,10 @@ function EditHeroPage() {
             city,
             powers
         }
-        return dispatch(updateHero(payload)).catch(async (res) => {
+        return dispatch(updateHero(payload)).then(res=> {history.push('/')}).catch(async (res) => {
             const data = await res.json();
             if (data && data.errors) setErrors(data.errors);
-            if(!errors) history.push('/')
-          });
+          })
     }
 
     return (
