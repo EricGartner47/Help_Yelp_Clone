@@ -78,4 +78,5 @@ router.delete('/:id', asyncHandler(async (req, res) => {
   return res.json({deleteHero})
 }))
 
+//test
 module.exports = router
