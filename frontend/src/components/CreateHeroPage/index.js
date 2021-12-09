@@ -22,11 +22,10 @@ function CreateHeroPage() {
             powers
         }
 
-        return dispatch(createHero(payload)).catch(async (res) => {
+        return dispatch(createHero(payload)).then(res=> {history.push('/')}).catch(async (res) => {
             const data = await res.json();
             if (data && data.errors) setErrors(data.errors);
-            if(!errors) history.push('/')
-        });
+          });
       }
 
     return (
