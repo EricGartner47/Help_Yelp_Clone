@@ -3,6 +3,7 @@ import { csrfFetch } from './csrf';
 const LOAD_ALL = 'hero/LOAD_ALL'
 const ADD_HERO = 'hero/ADD'
 const REMOVE_HERO = 'hero/REMOVE_HERO'
+const UPDATE_HERO = 'hero/UPDATE_HERO'
 
 const load_all = list => ({
     type: LOAD_ALL,
@@ -18,6 +19,11 @@ const removeHero = heroId => ({
     type: REMOVE_HERO,
     heroId
 });
+
+const update = hero => ({
+    type: UPDATE_HERO,
+    hero
+})
 
 export const getHeros = () => async dispatch => {
     const response = await fetch(`api/hero`);
@@ -49,6 +55,19 @@ export const deleteHero = (id) => async dispatch => {
     if(response.ok) {
         dispatch(removeHero(deletedHero))
         return deletedHero;
+    }
+}
+
+export const updateHero = (hero) => async dispatch => {
+    const response = await csrfFetch(`/api/hero/${hero.id}`, {
+        method: 'PUT',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(hero)
+    });
+    const upToDateHero = await response.json();
+    if(response.ok) {
+        dispatch(update(upToDateHero))
+        return upToDateHero
     }
 }
 

@@ -12,7 +12,7 @@ function CreateHeroPage() {
     const [powers, setPowers] = useState('');
     const [errors, setErrors] = useState([]);
     const history = useHistory()
-
+    console.log(errors)
     const handleSubmit = (e) => {
         e.preventDefault();
         const payload = {
