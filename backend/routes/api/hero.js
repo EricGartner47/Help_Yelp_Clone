@@ -52,7 +52,7 @@ router.post('/', heroValidators, asyncHandler(async (req, res) => {
     powers,
     heroId: user.data.id
   })
-  return res.json({newHero, token})
+  return res.json({newHero})
 }))
 
 // Edit a Hero

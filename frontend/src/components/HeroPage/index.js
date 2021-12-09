@@ -9,12 +9,17 @@ function HeroPage() {
     const hero = useSelector(state => state.hero[id])
     const history = useHistory()
     const dispatch = useDispatch()
+    const sessionUser = useSelector(state=> state.session.user)
 
     const removeHeroButton = () => {
         dispatch(deleteHero(hero.id))
         history.push('/')
     }
 
+    // if(sessionUser === null){
+    //     history.push('/')
+    // }
+    // console.log(sessionUser)
 
     return(
         <div className="hero-page">
@@ -25,10 +30,12 @@ function HeroPage() {
                 <p>{hero.city}</p>
                 <label>Abilities</label>
                 <p>{hero.powers}</p>
-                    <button className="edit-hero-link"><NavLink to={`/hero/edit/${hero.id}`}>Edit</NavLink></button>
-                    <button className="delete-hero-button"onClick={removeHeroButton}>Delete</button>
-
-
+                {sessionUser.id === hero.heroId &&
+                    <>
+                     <button className="edit-hero-link"><NavLink to={`/hero/edit/${hero.id}`}>Edit</NavLink></button>
+                     <button className="delete-hero-button"onClick={removeHeroButton}>Delete</button>
+                    </>
+                }
         </div>
     )
 
