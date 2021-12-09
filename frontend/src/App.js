@@ -34,11 +34,11 @@ function App() {
           <Route path="/create-hero">
             <CreateHeroPage />
           </Route>
+          <Route exact path="/hero/edit/:id">
+            <EditHeroPage />
+          </Route>
           <Route path="/hero/:id">
             <HeroPage />
-          </Route>
-          <Route path="/editHero/:id">
-            <EditHeroPage />
           </Route>
           <Route>
             <h2>Page Not Found</h2>

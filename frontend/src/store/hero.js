@@ -59,7 +59,7 @@ export const deleteHero = (id) => async dispatch => {
 }
 
 export const updateHero = (payload) => async dispatch => {
-    const response = await csrfFetch(`/api/hero/${payload.hero.id}`, {
+    const response = await csrfFetch(`/api/hero/edit/${payload.hero.id}`, {
         method: 'PUT',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(payload)

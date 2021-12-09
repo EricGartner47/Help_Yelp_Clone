@@ -56,7 +56,7 @@ router.post('/', heroValidators, asyncHandler(async (req, res) => {
 }))
 
 // Edit a Hero
-router.put('/:id', heroValidators, asyncHandler(async (req, res) =>{
+router.put('/edit/:id', heroValidators, asyncHandler(async (req, res) =>{
   const { token } = req.cookies;
   const user = jwt.verify(token, secret)
   const {title, description, city, powers} = req.body;
@@ -65,8 +65,7 @@ router.put('/:id', heroValidators, asyncHandler(async (req, res) =>{
     description,
     city,
     powers,
-    heroId: user.data.id
-  })
+  }, {})
   return res.json({updatedHero, token})
 }))
 

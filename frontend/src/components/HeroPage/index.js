@@ -25,8 +25,8 @@ function HeroPage() {
                 <p>{hero.city}</p>
                 <label>Abilities</label>
                 <p>{hero.powers}</p>
-                    <button><NavLink to={`/editHero/${hero.id}`}>Edit</NavLink></button>
-                    <button onClick={removeHeroButton}>Delete</button>
+                    <button className="edit-hero-link"><NavLink to={`/hero/edit/${hero.id}`}>Edit</NavLink></button>
+                    <button className="delete-hero-button"onClick={removeHeroButton}>Delete</button>
 
 
         </div>
