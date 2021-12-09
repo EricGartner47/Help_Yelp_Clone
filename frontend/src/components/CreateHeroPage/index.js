@@ -21,7 +21,7 @@ function CreateHeroPage() {
             city,
             powers
         }
-            // history.push('/')
+        history.push('/')
         return dispatch(createHero(payload)).catch(async (res) => {
             const data = await res.json();
             if (data && data.errors) setErrors(data.errors);

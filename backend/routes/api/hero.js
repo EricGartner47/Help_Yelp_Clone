@@ -59,6 +59,7 @@ router.post('/', heroValidators, asyncHandler(async (req, res) => {
 router.put('/edit/:id', heroValidators, asyncHandler(async (req, res) =>{
   const { token } = req.cookies;
   const user = jwt.verify(token, secret)
+  console.log(req.params.id, 'test')
   const {title, description, city, powers} = req.body;
   const updatedHero = await Hero.update({
     title,
@@ -66,7 +67,8 @@ router.put('/edit/:id', heroValidators, asyncHandler(async (req, res) =>{
     city,
     powers,
   }, {where: {heroId: user.data.id}})
-  return res.json({updatedHero, token})
+  const upToDateHero = await Hero.findByPk(req.params.id)
+  return res.json(upToDateHero)
 }))
 
 // Delete a Hero

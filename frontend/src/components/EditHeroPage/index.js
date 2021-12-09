@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
-import {createHero, updateHero} from '../../store/hero';
+import { updateHero} from '../../store/hero';
 import "./EditHeroPage.css"
 
 function EditHeroPage() {
@@ -14,6 +14,12 @@ function EditHeroPage() {
     const [powers, setPowers] = useState(hero.powers);
     const [errors, setErrors] = useState([]);
     const history = useHistory();
+
+    const updateTitle = (e) => setTitle(e.target.value)
+    const updateDescription = (e) => setDescription(e.target.value)
+    const updateCity = (e) => setCity(e.target.value)
+    const updatePowers = (e) => setPowers(e.target.value)
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -46,7 +52,7 @@ function EditHeroPage() {
                         type="text"
                         name="title"
                         value={title}
-                        onChange={(e)=> setTitle(e.target.value)}
+                        onChange={updateTitle}
                         />
                 </div>
                 <div className="description-container">
@@ -55,7 +61,7 @@ function EditHeroPage() {
                         name="description"
                         cols="20" rows="2"
                         value={description}
-                        onChange={(e)=> setDescription(e.target.value)}
+                        onChange={updateDescription}
                     />
                 </div>
                 <div className="city-container">
@@ -64,7 +70,7 @@ function EditHeroPage() {
                         type="text"
                         name="city"
                         value={city}
-                        onChange={(e)=> setCity(e.target.value)}
+                        onChange={updateCity}
                     />
                 </div>
                 <div className="powers-container">
@@ -73,7 +79,7 @@ function EditHeroPage() {
                         type="text"
                         name="powers"
                         value={powers}
-                        onChange={(e)=> setPowers(e.target.value)}
+                        onChange={updatePowers}
                         />
                 </div>
                 <div>
