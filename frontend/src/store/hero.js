@@ -93,6 +93,11 @@ const heroReducer = (state = initialState, action) => {
                 ...allHeros,
                 ...state,
                 list: sortList(action.list)};
+        case REMOVE_HERO:
+            const newState = {...state};
+            delete newState[action.heroId.id]
+            newState.list = state.list.filter(hero => hero !== action.heroId.id)
+            return newState
         case ADD_HERO:
               return {
                 ...state,
@@ -100,11 +105,6 @@ const heroReducer = (state = initialState, action) => {
                   ...state[action.hero.id],
                   ...action.hero
                 }};
-        case REMOVE_HERO:
-            const newState = {...state};
-            delete newState[action.heroId]
-            newState.list = state.list.filter(heroId => heroId !== action.heroId)
-            return newState
         case UPDATE_HERO:
             return {
                 ...state,

@@ -11,7 +11,7 @@ function HomePage() {
 
     useEffect(()=>{
         dispatch(getHeros())
-    }, [])
+    },[dispatch])
 
     const heros = useSelector(state => {
         return state.hero.list.map(heroId => state.hero[heroId]);

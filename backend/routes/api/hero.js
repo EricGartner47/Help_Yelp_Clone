@@ -75,7 +75,7 @@ router.put('/edit/:id', heroValidators, asyncHandler(async (req, res) =>{
 router.delete('/:id', asyncHandler(async (req, res) => {
   const deleteHero = await Hero.findByPk(req.params.id)
   await deleteHero.destroy()
-  return res.json({deleteHero})
+  return res.json(deleteHero)
 }))
 
 // List all review for a hero
