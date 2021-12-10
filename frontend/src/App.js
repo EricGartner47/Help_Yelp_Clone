@@ -39,14 +39,14 @@ function App() {
           <Route exact path="/hero/edit/:id">
             <EditHeroPage />
           </Route>
+          <Route path="/hero/create-review/:id">
+            <CreateReviewPage />
+          </Route>
           <Route path="/hero/:id">
             <HeroPage />
           </Route>
           <Route exact path="/review/:id">
             <ReviewPage />
-          </Route>
-          <Route path="/create-review">
-            <CreateReviewPage />
           </Route>
           <Route>
             <h2>Page Not Found</h2>

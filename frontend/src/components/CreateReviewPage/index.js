@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import {createReview} from '../../store/review';
+import './CreateReviewPage.css'
 
 function CreateReviewPage() {
     const dispatch = useDispatch()
+    const { id } = useParams();
+    const hero = useSelector(state => state.hero[id])
     const [answer, setAnswer] = useState('');
     const [rating, setRating] = useState('');
     const [errors, setErrors] = useState([]);
@@ -13,6 +16,7 @@ function CreateReviewPage() {
     const handleSubmit = (e) => {
         e.preventDefault();
         const payload = {
+            hero,
             answer,
             rating
         }
@@ -44,9 +48,10 @@ function CreateReviewPage() {
                 <div className="rating-container">
                     <label for="rating">Your Rating</label>
                     <input
-                        name="description"
-                        cols="20" rows="2"
-                        // style="margin: 0px; width: 493px; height: 62px;"
+                        name="rating"
+                        type="number"
+                        min="1"
+                        max="5"
                         value={rating}
                         onChange={(e)=> setRating(e.target.value)}
                     />
@@ -59,4 +64,4 @@ function CreateReviewPage() {
     )
 }
 
-export default CreateReviewPage; 
+export default CreateReviewPage;

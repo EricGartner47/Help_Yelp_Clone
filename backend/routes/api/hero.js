@@ -28,6 +28,16 @@ const heroValidators = [
   handleValidationErrors
 ]
 
+const reviewValidators = [
+  check('rating')
+    .exists({checkFalsy: true})
+    .withMessage('Please provide a rating'),
+  check('answer')
+    .exists({checkFalsy: true})
+    .withMessage('Please provide a review'),
+  handleValidationErrors
+]
+
 // List of Heros on Home Page
 router.get('/', asyncHandler(async function( req, res) {
     const heros = await Hero.findAll();
@@ -83,6 +93,21 @@ router.get('/:id/reviews', asyncHandler(async (req, res) => {
   const hero = await Hero.findByPk(req.params.id)
   const answer = await Review.findAll({where: {vigilanteId: hero.id}})
   return res.json({answer})
+}))
+
+// Create a review for a hero
+router.post('/:id/create-review', reviewValidators, asyncHandler(async (req, res) => {
+  const {token} = req.cookies;
+  const user = jwt.verify(token, secret);
+  const hero = await Hero.findByPk(req.params.id);
+  const {rating, answer} = req.body;
+  const newReview = await Review.create({
+      rating,
+      answer,
+      userId: user.data.id,
+      vigilanteId: hero.id
+  })
+  return res.json({newReview})
 }))
 
 

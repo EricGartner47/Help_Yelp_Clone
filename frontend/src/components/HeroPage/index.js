@@ -46,11 +46,11 @@ function HeroPage() {
                      <button className="delete-hero-button"onClick={removeHeroButton}>Delete</button>
                     </> : <> </>
                 }
-                <button className="create-review-button"><NavLink to={`/create-review`}>Leave A Review</NavLink></button>
+                <button className="create-review-button"><NavLink to={`/hero/create-review/${hero.id}`}>Leave A Review</NavLink></button>
                 {reviews.map(review => {
                     return (
                         <div className="review-container">
-                            <NavLink key={review.id} to={`/review/${review.id}`} className="hero-title">{review.id}</NavLink>
+                            <NavLink key={review.id} to={`/review/${review.id}`} className="create-review-link">{review.id}</NavLink>
                             <label>Review</label>
                             <p className="review-answer">{review.answer}</p>
                             <p>Rating: {review.rating}</p>
