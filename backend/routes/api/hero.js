@@ -80,8 +80,8 @@ router.delete('/:id', asyncHandler(async (req, res) => {
 
 // List all review for a hero
 router.get('/:id/reviews', asyncHandler(async (req, res) => {
-  const heroId = await Hero.findByPk(req.params.id)
-  const answer = await Review.findAll({where: {vigilanteId: heroId}})
+  const hero = await Hero.findByPk(req.params.id)
+  const answer = await Review.findAll({where: {vigilanteId: hero.id}})
   return res.json({answer})
 }))
 
