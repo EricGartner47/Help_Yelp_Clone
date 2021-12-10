@@ -69,7 +69,6 @@ router.post('/', heroValidators, asyncHandler(async (req, res) => {
 router.put('/edit/:id', heroValidators, asyncHandler(async (req, res) =>{
   const { token } = req.cookies;
   const user = jwt.verify(token, secret)
-  console.log(req.params.id, 'test')
   const {title, description, city, powers} = req.body;
   const updatedHero = await Hero.update({
     title,

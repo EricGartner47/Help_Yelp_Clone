@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory, NavLink} from 'react-router-dom';
+import { deleteReview } from '../../store/review';
 import './ReviewPage.css'
 
 
 function ReviewPage() {
     const { id } = useParams();
-    console.log(id)
     const review = useSelector(state => state.review[id]);
+    const sessionUser = useSelector(state => state.session.user)
     const dispatch = useDispatch();
+
+    const removeReviewButton = () => {
+        dispatch(deleteReview(review.id))
+    }
 
     return(
         <div className="review-page">
@@ -16,6 +21,12 @@ function ReviewPage() {
                 <label>Review</label>
                 <p>{review.answer}</p>
                 <label>Rating: {review.rating}</label>
+                {sessionUser ? sessionUser.id === review.userId &&
+                    <>
+                     <button className="edit-review-link"><NavLink to={`/review/edit/${review.id}`}>Edit</NavLink></button>
+                     <button className="delete-review-button"onClick={removeReviewButton}>Delete</button>
+                    </> : <> </>
+                }
         </div>
     )
 }

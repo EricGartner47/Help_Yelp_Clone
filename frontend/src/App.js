@@ -11,6 +11,7 @@ import Navigation from "./components/Navigation";
 import EditHeroPage from "./components/EditHeroPage";
 import ReviewPage from "./components/ReviewPage";
 import CreateReviewPage from "./components/CreateReviewPage";
+import EditReviewPage from "./components/EditReviewPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -44,6 +45,9 @@ function App() {
           </Route>
           <Route path="/hero/:id">
             <HeroPage />
+          </Route>
+          <Route exact path="/review/edit/:id">
+            <EditReviewPage />
           </Route>
           <Route exact path="/review/:id">
             <ReviewPage />

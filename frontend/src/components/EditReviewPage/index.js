@@ -1,67 +1,70 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
-import {createReview} from '../../store/review';
-import './CreateReviewPage.css'
+import { updateReview} from '../../store/review';
 
-function CreateReviewPage() {
-    const dispatch = useDispatch()
+function EditReviewPage() {
+    const dispatch = useDispatch();
     const { id } = useParams();
-    const hero = useSelector(state => state.hero[id])
-    const [answer, setAnswer] = useState('');
-    const [rating, setRating] = useState('');
+    const review = useSelector(state => state.review[id])
+    const [answer, setAnswer] = useState(review.answer);
+    const [rating, setRating] = useState(review.rating);
     const [errors, setErrors] = useState([]);
     const history = useHistory();
+
+    const updateAnswer = (e) => setAnswer(e.target.value)
+    const updateRating = (e) => setRating(e.target.value)
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const payload = {
-            hero,
+            review,
             answer,
             rating
         }
-        return dispatch(createReview(payload)).then(res=> {history.push(`/hero/${hero.id}`)}).catch(async (res) => {
+        return dispatch(updateReview(payload)).then(res=> {history.push(`/review/${review.id}`)}).catch(async (res) => {
             const data = await res.json();
             if (data && data.errors) setErrors(data.errors);
-          });
+          })
     }
 
-    return(
-        <div>
+    return (
+        <>
             <form
-                className="create-review-form"
+                className="edit-review-form"
                 onSubmit={handleSubmit}>
                 <ul>
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
                 </ul>
-                <label>Rate A Hero</label>
+                <label>Update Your Review</label>
                 <div className="answer-container">
                     <label for="answer">Review</label>
                     <input
                         type="text"
-                        placeholder="Your Review"
                         name="answer"
                         value={answer}
-                        onChange={(e)=> setAnswer(e.target.value)}
+                        onChange={updateAnswer}
                         />
                 </div>
                 <div className="rating-container">
                     <label for="rating">Your Rating</label>
-                    <input
+                    <textarea
                         name="rating"
                         type="number"
                         min="1"
                         max="5"
                         value={rating}
-                        onChange={(e)=> setRating(e.target.value)}
+                        onChange={updateRating}
                     />
                 </div>
                 <div>
-                    <button className="create-review-button"type="submit">Create Review</button>
+                    <button className="update-review-button"type="submit">Update Review</button>
                 </div>
             </form>
-        </div>
+        </>
     )
+
+
 }
 
-export default CreateReviewPage;
+export default EditReviewPage;
