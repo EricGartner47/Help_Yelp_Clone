@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { updateReview} from '../../store/review';
+import './EditReviewPage.css'
 
 function EditReviewPage() {
     const dispatch = useDispatch();
@@ -22,7 +23,7 @@ function EditReviewPage() {
             answer,
             rating
         }
-        return dispatch(updateReview(payload)).then(res=> {history.push(`/review/${review.id}`)}).catch(async (res) => {
+        return dispatch(updateReview(payload)).then(res=> {history.push(`/`)}).catch(async (res) => {
             const data = await res.json();
             if (data && data.errors) setErrors(data.errors);
           })
