@@ -23,13 +23,18 @@ function HomePage() {
         return dispatch(sessionActions.login({ credential: 'Demo-lition', password: 'password' }))
     }
 
+    const handleSearch = (e) => {
+        e.preventDefault();
+        return dispatch
+    }
+
     return (
         <div>
             <div className="home-page">
                 <div>
                     <h1 className="home-page-logo">Help!</h1>
                 </div>
-                <form className="search-bar">
+                <form className="search-bar" onSubmit={handleSearch}>
                     <input className="search-input" placeholder="Here to help"/>
                     <button className="fas fa-mask" type="submit" id="hero mask"/>
                 </form>

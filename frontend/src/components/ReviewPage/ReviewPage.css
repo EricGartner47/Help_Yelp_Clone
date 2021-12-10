@@ -12,3 +12,13 @@
     justify-content: flex-start;
     color: #FACB33;
 }
+
+.edit-review-link {
+    background-color: #AB0020;
+    color: #FACB33;
+}
+
+.delete-review-button {
+    background-color: #AB0020;
+    color: #FACB33;
+}

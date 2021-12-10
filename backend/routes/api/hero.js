@@ -109,5 +109,7 @@ router.post('/:id/create-review', reviewValidators, asyncHandler(async (req, res
   return res.json({newReview})
 }))
 
+//Search for a hero
+
 
 module.exports = router

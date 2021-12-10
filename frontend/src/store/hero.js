@@ -4,6 +4,7 @@ const LOAD_ALL = 'hero/LOAD_ALL'
 const ADD_HERO = 'hero/ADD'
 const REMOVE_HERO = 'hero/REMOVE_HERO'
 const UPDATE_HERO = 'hero/UPDATE_HERO'
+const SEARCH_HERO = 'hero/SEARCH'
 
 const load_all = list => ({
     type: LOAD_ALL,
@@ -24,6 +25,12 @@ const update = hero => ({
     type: UPDATE_HERO,
     hero
 })
+
+const search = hero => ({
+    type: SEARCH_HERO,
+    hero
+})
+
 
 export const getHeros = () => async dispatch => {
     const response = await fetch(`api/hero`);
@@ -70,6 +77,10 @@ export const updateHero = (payload) => async dispatch => {
         return upToDateHero
     }
 }
+
+// export const searchHero = (payload) => async dispatch => {
+//     const response = await fetch(`/api/hero`)
+// }
 
 const initialState = {
     list: []
