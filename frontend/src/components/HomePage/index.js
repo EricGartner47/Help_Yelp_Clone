@@ -8,14 +8,15 @@ import "./HomePage.css"
 
 function HomePage() {
     const dispatch = useDispatch();
-    const heros = useSelector(state => {
-        return state.hero.list.map(heroId => state.hero[heroId]);
-      });
-
 
     useEffect(()=>{
         dispatch(getHeros())
     }, [dispatch])
+
+    const heros = useSelector(state => {
+        return state.hero.list.map(heroId => state.hero[heroId]);
+    });
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -45,7 +46,7 @@ function HomePage() {
             </div>
             <div className="footer">
                 <ul className="created-by"> Created by Eric Gartner
-                    <li>
+                    <li key="links">
                         <a key="GitHub" href="https://github.com/EricGartner47">Github</a>
                         <a key="Linked In"href="https://www.linkedin.com/in/eric-gartner-731907a0/">Linked In</a>
                     </li>

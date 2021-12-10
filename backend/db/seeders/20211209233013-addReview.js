@@ -13,7 +13,7 @@ module.exports = {
      },
     {
      rating: 5,
-     answer: 'He was faster the a speeding bullet!',
+     answer: 'He was faster than a speeding bullet!',
      vigilanteId: 2,
      userId: 1,
      createdAt: new Date(),

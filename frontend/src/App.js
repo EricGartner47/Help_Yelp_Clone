@@ -9,6 +9,7 @@ import HeroPage from "./components/HeroPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import EditHeroPage from "./components/EditHeroPage";
+import ReviewPage from "./components/ReviewPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -39,6 +40,9 @@ function App() {
           </Route>
           <Route path="/hero/:id">
             <HeroPage />
+          </Route>
+          <Route exact path="/review/:id">
+            <ReviewPage />
           </Route>
           <Route>
             <h2>Page Not Found</h2>
