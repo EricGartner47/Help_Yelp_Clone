@@ -1,32 +1,30 @@
-// const express = require('express');
-// const router = express.Router();
-// const asyncHandler = require('express-async-handler');
-// // const csrf = require('csurf')
+const express = require('express');
+const router = express.Router();
+const asyncHandler = require('express-async-handler');
+// const csrf = require('csurf')
 
-// const jwt = require('jsonwebtoken');
-// const { jwtConfig } = require('../../config')
-// const { secret, expiresIn } = jwtConfig;
-// const { Hero, User, Review  } = require('../../db/models');
-// const { check } = require('express-validator');
-// const { handleValidationErrors } = require('../../utils/validation');
-// const { route } = require('./hero');
+const jwt = require('jsonwebtoken');
+const { jwtConfig } = require('../../config')
+const { secret, expiresIn } = jwtConfig;
+const { Hero, User, Review  } = require('../../db/models');
+const { check } = require('express-validator');
+const { handleValidationErrors } = require('../../utils/validation');
+const { route } = require('./hero');
 
-// const reviewValidators = [
-//     check('rating')
-//       .exists({checkFalsy: true})
-//       .withMessage('Please provide a rating'),
-//     check('answer')
-//       .exists({checkFalsy: true})
-//       .withMessage('Please provide a review'),
-//     handleValidationErrors
-// ]
+const reviewValidators = [
+    check('rating')
+      .exists({checkFalsy: true})
+      .withMessage('Please provide a rating'),
+    check('answer')
+      .exists({checkFalsy: true})
+      .withMessage('Please provide a review'),
+    handleValidationErrors
+]
 
-// // List all reviews
-// // router.get('/', asyncHandler(async (req, res) => {
-// //     const answer = await
-// // }))
+//List all reviews for a hero
 
-// // Create a review
+
+// Create a review
 // router.post('/', reviewValidators, asyncHandler(async (req, res) => {
 //     const {token} = req.cookies;
 //     const user = jwt.verify(token, secret);
@@ -40,4 +38,4 @@
 //     return res.json({newReview})
 // }))
 
-// module.exports = router
+module.exports = router

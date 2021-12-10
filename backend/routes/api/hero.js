@@ -6,7 +6,7 @@ const asyncHandler = require('express-async-handler');
 const jwt = require('jsonwebtoken');
 const { jwtConfig } = require('../../config')
 const { secret, expiresIn } = jwtConfig;
-const { Hero, User  } = require('../../db/models');
+const { Hero, User, Review } = require('../../db/models');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 
@@ -78,5 +78,12 @@ router.delete('/:id', asyncHandler(async (req, res) => {
   return res.json({deleteHero})
 }))
 
-//test
+// List all review for a hero
+router.get('/:id/reviews', asyncHandler(async (req, res) => {
+  const heroId = await Hero.findByPk(req.params.id)
+  const answer = await Review.findAll({where: {vigilanteId: heroId}})
+  return res.json({answer})
+}))
+
+
 module.exports = router
