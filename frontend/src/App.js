@@ -10,6 +10,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import EditHeroPage from "./components/EditHeroPage";
 import ReviewPage from "./components/ReviewPage";
+import CreateReviewPage from "./components/CreateReviewPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -43,6 +44,9 @@ function App() {
           </Route>
           <Route exact path="/review/:id">
             <ReviewPage />
+          </Route>
+          <Route path="/create-review">
+            <CreateReviewPage />
           </Route>
           <Route>
             <h2>Page Not Found</h2>
