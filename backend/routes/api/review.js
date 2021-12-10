@@ -21,21 +21,18 @@ const reviewValidators = [
     handleValidationErrors
 ]
 
-//List all reviews for a hero
-
-
 // Create a review
-// router.post('/', reviewValidators, asyncHandler(async (req, res) => {
-//     const {token} = req.cookies;
-//     const user = jwt.verify(token, secret);
-//     const {rating, answer} = req.body;
-//     const newReview = await Review.create({
-//         rating,
-//         answer,
-//         userId: user.data.id,
-//         heroId: hero.id
-//     })
-//     return res.json({newReview})
-// }))
+router.post('/', reviewValidators, asyncHandler(async (req, res) => {
+    const {token} = req.cookies;
+    const user = jwt.verify(token, secret);
+    const {rating, answer} = req.body;
+    const newReview = await Review.create({
+        rating,
+        answer,
+        userId: user.data.id,
+        heroId: hero.id
+    })
+    return res.json({newReview})
+}))
 
 module.exports = router
