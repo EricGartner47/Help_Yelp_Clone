@@ -48,7 +48,7 @@ function EditReviewPage() {
                 </div>
                 <div className="rating-container">
                     <label for="rating">Your Rating</label>
-                    <textarea
+                    <input
                         name="rating"
                         type="number"
                         min="1"
