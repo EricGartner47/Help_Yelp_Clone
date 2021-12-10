@@ -10,9 +10,11 @@ function ReviewPage() {
     const review = useSelector(state => state.review[id]);
     const sessionUser = useSelector(state => state.session.user)
     const dispatch = useDispatch();
+    const history = useHistory(); 
 
     const removeReviewButton = () => {
         dispatch(deleteReview(review.id))
+        history.push('/')
     }
 
     return(

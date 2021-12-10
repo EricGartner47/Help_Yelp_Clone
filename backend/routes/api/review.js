@@ -21,7 +21,7 @@ const reviewValidators = [
     handleValidationErrors
   ]
 
-// Edit a Hero
+// Edit a Review
 router.put('/edit/:id', reviewValidators, asyncHandler(async (req, res) =>{
     const { token } = req.cookies;
     const user = jwt.verify(token, secret)
@@ -33,5 +33,12 @@ router.put('/edit/:id', reviewValidators, asyncHandler(async (req, res) =>{
     const upToDateReview = await Review.findByPk(req.params.id)
     return res.json(upToDateReview)
 }))
+
+// Delete a Review
+router.delete('/:id', asyncHandler(async (req, res) => {
+    const deleteReview = await Review.findByPk(req.params.id)
+    await deleteReview.destroy()
+    return res.json(deleteReview)
+  }))
 
 module.exports = router
