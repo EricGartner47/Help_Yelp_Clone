@@ -19,6 +19,14 @@
     text-decoration: under;
 }
 
+.hero-title {
+    font-size: large;
+}
+
+.hero-container {
+    font-size: medium;
+}
+
 .hero-description{
     color: white;
     padding: 10px;
