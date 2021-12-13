@@ -34,10 +34,19 @@
 }
 
 .review-table-container {
+    width: 80%;
     /* display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-content: flex-start; */
+}
+
+table,th,td {
+    border: 1px solid white;
+}
+
+td {
+    text-align: center;
 }
 
 .hero-description-page {

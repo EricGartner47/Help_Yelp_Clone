@@ -1,21 +1,26 @@
 .nav-bar{
     background-color: #AB0020;
     border-radius: 3px;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
     padding: 3px;
     /* margin: 3px; */
+    float: center;
+    text-align: center;
+    overflow: hidden;
+    font-size: 17px;
 }
 
 .nav-div{
     list-style-type: none;
-    /* display: flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    list-style-type: none; */
+    list-style-type: none;
+    font-size: 17px;
 }
 
 .nav-div > a{
@@ -42,6 +47,10 @@
 
 .home-page-link {
     list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items:flex-start;
+    font-size: 30px;
     /* position: relative;
     right: 40%;
     top: -20%;
