@@ -17,3 +17,11 @@
     background-color: #AB0020;
     color: #FACB33;
 }
+
+input {
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+}
