@@ -82,9 +82,6 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    /* text-decoration: underline; */
-}
 
 .gitHub-link {
     color: white;
@@ -104,4 +101,9 @@ a:hover {
     cursor: pointer;
     text-decoration: underline;
     color: white;
+}
+
+.search-bar > button {
+    padding: 12px 12px;
+    margin: 8px 0;
 }

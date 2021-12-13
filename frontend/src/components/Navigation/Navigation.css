@@ -47,10 +47,10 @@
 
 .home-page-link {
     list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    align-items:flex-start;
-    font-size: 30px;
+    position: absolute;
+    left: 25%;
+    font-size: 20px;
+    top: 2.5%
     /* position: relative;
     right: 40%;
     top: -20%;
@@ -58,12 +58,3 @@
     padding: 10px; */
 }
 
-.log-in-link {
-    /* left:40%; */
-}
-
-.drop-down {
-    /* display: flex;
-    flex-direction: row;
-    justify-content: flex-end; */
-}

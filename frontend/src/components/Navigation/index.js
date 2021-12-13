@@ -17,7 +17,7 @@ function Navigation({ isLoaded }){
     );
   } else {
     sessionLinks = (
-      <div>
+      <div className='sessionLinks'>
         <NavLink to="/login" className="log-in-link">Log In</NavLink>
         <NavLink to="/signup" className="sign-up-link">Sign Up</NavLink>
       </div>
