@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory, NavLink} from 'react-router-dom';
 import { deleteHero} from '../../store/hero';
@@ -50,16 +50,20 @@ function HeroPage() {
                 {reviews.map(review => {
                     return (
                         <table className="review-table-container">
-                            <tr>
-                                <th>Review</th>
-                                <th>Description</th>
-                                <th>Rating</th>
-                            </tr>
-                            <tr>
-                                <td><NavLink key={review.id} to={`/review/${review.id}`} className="review-link">{review.id}</NavLink></td>
-                                <td className="review-answer">{review.answer}</td>
-                                <td className="review-rating">{review.rating}</td>
-                            </tr>
+                            <thead>
+                                <tr>
+                                    <th>Review</th>
+                                    <th>Description</th>
+                                    <th>Rating</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><NavLink key={review.id} to={`/review/${review.id}`} className="review-link">{review.id}</NavLink></td>
+                                    <td className="review-answer">{review.answer}</td>
+                                    <td className="review-rating">{review.rating}</td>
+                                </tr>
+                            </tbody>
                         </table>
                         )})}
         </div>

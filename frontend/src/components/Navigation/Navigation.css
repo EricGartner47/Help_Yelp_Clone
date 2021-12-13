@@ -10,19 +10,21 @@
 }
 
 .nav-div{
-    display: flex;
+    list-style-type: none;
+    /* display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    list-style-type: none;
+    list-style-type: none; */
 }
 
 .nav-div > a{
     color: #FACB33;
     text-decoration: none;
-    display: flex;
+    list-style-type: none;
+    /* display: flex;
     flex: row;
-    justify-content: space-between;
+    justify-content: space-between; */
     /* display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,19 +41,20 @@
 }
 
 .home-page-link {
-    position: relative;
+    list-style-type: none;
+    /* position: relative;
     right: 40%;
     top: -20%;
     font-size: 20px;
-    padding: 10px;
+    padding: 10px; */
 }
 
 .log-in-link {
-    left:40%;
+    /* left:40%; */
 }
 
 .drop-down {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: flex-end; */
 }

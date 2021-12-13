@@ -1,6 +1,7 @@
 .home-page {
     padding-top: 30px;
-    height: 570px;
+    height: 700px;
+    width: 800px;
     background-color: #AB0020;
     background-size: cover;
     background-position: 50%;
@@ -55,7 +56,7 @@
 
 .demo-button {
     position: absolute;
-    left: 40%;
+    left: 45%;
     top: -85%;
     background-color: #AB0020;
     color: #FACB33;
@@ -74,7 +75,7 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 
 .gitHub-link {

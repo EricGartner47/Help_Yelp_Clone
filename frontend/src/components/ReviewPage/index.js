@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory, NavLink} from 'react-router-dom';
 import { deleteReview } from '../../store/review';
@@ -10,7 +10,7 @@ function ReviewPage() {
     const review = useSelector(state => state.review[id]);
     const sessionUser = useSelector(state => state.session.user)
     const dispatch = useDispatch();
-    const history = useHistory(); 
+    const history = useHistory();
 
     const removeReviewButton = () => {
         dispatch(deleteReview(review.id))
