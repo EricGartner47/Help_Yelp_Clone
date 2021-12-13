@@ -51,8 +51,8 @@ function CreateHeroPage() {
                     <label for="description">Your Motto</label>
                     <textarea
                         name="description"
+                        placeholder="Your Motto"
                         cols="20" rows="2"
-                        // style="margin: 0px; width: 493px; height: 62px;"
                         value={description}
                         onChange={(e)=> setDescription(e.target.value)}
                     />
@@ -62,6 +62,7 @@ function CreateHeroPage() {
                     <input
                         type="text"
                         name="city"
+                        placeholder="Your City"
                         value={city}
                         onChange={(e)=> setCity(e.target.value)}
                     />
@@ -71,6 +72,7 @@ function CreateHeroPage() {
                     <input
                         type="text"
                         name="powers"
+                        placeholder="Your Abilities"
                         value={powers}
                         onChange={(e)=> setPowers(e.target.value)}
                         />
