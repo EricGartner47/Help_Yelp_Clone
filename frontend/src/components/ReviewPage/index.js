@@ -1,3 +1,4 @@
+import { set } from 'js-cookie';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory, NavLink} from 'react-router-dom';

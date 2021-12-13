@@ -41,12 +41,18 @@
     align-content: flex-start; */
 }
 
+.review-answer {
+    table-layout: fixed;
+}
+
+
 table,th,td {
     border: 1px solid white;
 }
 
 td {
     text-align: center;
+    word-wrap: break-word;
 }
 
 .hero-description-page {
@@ -71,4 +77,12 @@ td {
 
 .review-rating {
     color: white;
+}
+
+button {
+    margin: 3px;
+}
+
+button:hover {
+    cursor: pointer;
 }
