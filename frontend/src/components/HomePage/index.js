@@ -50,10 +50,10 @@ function HomePage() {
                 </div>
             </div>
             <div className="footer">
-                <ul className="created-by"> Created by Eric Gartner
+                <ul className="created-by"> Created by Eric Gartner:
                     <li key="links">
-                        <a key="GitHub" href="https://github.com/EricGartner47">Github</a>
-                        <a key="Linked In"href="https://www.linkedin.com/in/eric-gartner-731907a0/">Linked In</a>
+                        <a key="GitHub" className="gitHub-link" href="https://github.com/EricGartner47">Github</a>
+                        <a key="Linked In" className="linkedIn-link"href="https://www.linkedin.com/in/eric-gartner-731907a0/">Linked In</a>
                     </li>
                 </ul>
                     <form onSubmit={handleSubmit}>

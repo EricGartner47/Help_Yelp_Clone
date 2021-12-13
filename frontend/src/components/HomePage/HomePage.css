@@ -14,6 +14,10 @@
     align-items: center;
 }
 
+.hero-title:hover {
+    text-decoration: under;
+}
+
 .hero-description{
     color: white;
     padding: 10px;
@@ -52,6 +56,7 @@
 .demo-button {
     position: absolute;
     left: 40%;
+    top: -85%;
     background-color: #AB0020;
     color: #FACB33;
 }
@@ -60,7 +65,7 @@
     cursor: pointer;
 }
 
- a {
+a {
     list-style-type: none;
     padding: 0px .2rem;
     font-size: .9rem;
@@ -69,5 +74,25 @@
 }
 
 a:hover {
+    text-decoration: underline;
+}
+
+.gitHub-link {
+    color: white;
+}
+
+.gitHub-link:hover {
     cursor: pointer;
+    text-decoration: underline;
+    color: white;
+}
+
+.linkedIn-link {
+    color: white;
+}
+
+.linkedIn-link:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: white;
 }

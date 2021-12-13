@@ -35,11 +35,11 @@ function HeroPage() {
         <div className="hero-page">
             <h2>{hero.title}</h2>
                 <label>Motto</label>
-                <p>{hero.description}</p>
+                <p className="hero-description-page">{hero.description}</p>
                 <label>City</label>
-                <p>{hero.city}</p>
+                <p className="hero-city">{hero.city}</p>
                 <label>Abilities</label>
-                <p>{hero.powers}</p>
+                <p className="hero-powers">{hero.powers}</p>
                 {sessionUser ? sessionUser.id === hero.heroId &&
                     <>
                      <button className="edit-hero-link"><NavLink to={`/hero/edit/${hero.id}`}>Edit</NavLink></button>
@@ -49,12 +49,18 @@ function HeroPage() {
                 <button className="create-review-button"><NavLink to={`/hero/create-review/${hero.id}`}>Leave A Review</NavLink></button>
                 {reviews.map(review => {
                     return (
-                        <div className="review-container">
-                            <NavLink key={review.id} to={`/review/${review.id}`} className="create-review-link">{review.id}</NavLink>
-                            <label>Review</label>
-                            <p className="review-answer">{review.answer}</p>
-                            <p>Rating: {review.rating}</p>
-                        </div>
+                        <table className="review-table-container">
+                            <tr>
+                                <th>Review</th>
+                                <th>Description</th>
+                                <th>Rating</th>
+                            </tr>
+                            <tr>
+                                <td><NavLink key={review.id} to={`/review/${review.id}`} className="review-link">{review.id}</NavLink></td>
+                                <td className="review-answer">{review.answer}</td>
+                                <td className="review-rating">{review.rating}</td>
+                            </tr>
+                        </table>
                         )})}
         </div>
     )

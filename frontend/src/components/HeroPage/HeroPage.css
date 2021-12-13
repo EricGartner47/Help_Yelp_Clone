@@ -31,3 +31,34 @@
     background-color: #AB0020;
     color: #FACB33;
 }
+
+.review-table-container {
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: flex-start; */
+}
+
+.hero-description-page {
+    color: white;
+}
+
+.hero-city {
+    color: white;
+}
+
+.hero-powers {
+    color: white;
+}
+
+.review-link {
+    color: white;
+}
+
+.review-answer {
+    color: white;
+}
+
+.review-rating {
+    color: white; 
+}
