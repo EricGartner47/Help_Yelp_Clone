@@ -21,7 +21,7 @@ function ReviewPage() {
         <div className="review-page">
             <h2>{review.id}</h2>
                 <label>Review</label>
-                <p>{review.answer}</p>
+                <p className="review-answer">{review.answer}</p>
                 <label>Rating: {review.rating}</label>
                 {sessionUser ? sessionUser.id === review.userId &&
                     <>
