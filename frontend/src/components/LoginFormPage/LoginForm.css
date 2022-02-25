@@ -23,7 +23,7 @@
     animation: smooth .25s ease-in-out;
 }
 
-html {
+/* html {
     background: url(https://c4.wallpaperflare.com/wallpaper/851/447/633/marvel-comics-dc-comics-collage-wonder-woman-wallpaper-preview.jpg);
     min-height: 100%;
 }
@@ -33,14 +33,14 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'Bangers', cursive;
-}
+} */
 
 .login-button {
     background-color: #AB0020;
     color: #FACB33;
 }
 
-input {
+/* input {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -52,4 +52,4 @@ textarea {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-}
+} */

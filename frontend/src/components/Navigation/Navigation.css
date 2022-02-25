@@ -1,12 +1,7 @@
 .nav-bar{
     background-color: #AB0020;
     border-radius: 3px;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
     padding: 3px;
-    /* margin: 3px; */
     float: center;
     text-align: center;
     overflow: hidden;
@@ -27,13 +22,6 @@
     color: #FACB33;
     text-decoration: none;
     list-style-type: none;
-    /* display: flex;
-    flex: row;
-    justify-content: space-between; */
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
 }
 
 .nav-div > a:hover{
@@ -51,10 +39,4 @@
     left: 25%;
     font-size: 20px;
     top: 2.5%
-    /* position: relative;
-    right: 40%;
-    top: -20%;
-    font-size: 20px;
-    padding: 10px; */
 }
-
