@@ -69,6 +69,6 @@ function HeroPage() {
         </div>
     )
 }
-//test
+
 
 export default HeroPage;
