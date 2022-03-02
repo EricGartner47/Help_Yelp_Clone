@@ -10,30 +10,26 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <div className="drop-down">
+      <div id="drop-down">
         <NavLink to="/create-hero">Create a Hero Page</NavLink>
         <ProfileButton user={sessionUser} />
       </div>
     );
   } else {
     sessionLinks = (
-      <div className='sessionLinks'>
-        <NavLink to="/login" className="log-in-link">Log In</NavLink>
-        <NavLink to="/signup" className="sign-up-link">Sign Up</NavLink>
+      <div id='sessionLinks'>
+        <NavLink to="/login" id="log-in-link">Log In</NavLink>
+        <NavLink to="/signup" id="sign-up-link">Sign Up</NavLink>
       </div>
     );
   }
 
   return (
     <div>
-      <ul id="nav-bar">
-        <div className="nav-div">
-          <li>
-            <div className="home-page-link"><NavLink exact to="/">Help!</NavLink></div>
-            {isLoaded && sessionLinks}
-          </li>
-        </div>
-      </ul>
+      <div id="nav-bar">
+        <div id="home-page-link"><NavLink exact to="/">Help!</NavLink></div>
+        {isLoaded && sessionLinks}
+      </div>
     </div>
   );
 }

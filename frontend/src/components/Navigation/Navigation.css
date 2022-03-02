@@ -3,13 +3,21 @@
     margin: 0px;
     padding: 0px;
     border: 0px;
-    vertical-align: baseline;
-    background: #f5f5f5;
+    display: flex;
+    justify-content: space-between;
 }
 
+#home-page-link {
 
+}
 
+#log-in-link {
+    padding: 5px;
+}
 
+#sign-up-link {
+    padding: 5px;
+}
 
 
 
