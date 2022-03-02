@@ -1,11 +1,12 @@
-.nav-bar{
+/* .nav-bar{
     background-color: #AB0020;
-    border-radius: 3px;
     padding: 3px;
     float: center;
     text-align: center;
     overflow: hidden;
     font-size: 17px;
+    margin: none;
+    width: 100%;
 }
 
 .nav-div{
@@ -39,4 +40,4 @@
     left: 25%;
     font-size: 20px;
     top: 2.5%
-}
+} */
