@@ -31,8 +31,8 @@ function HomePage() {
     return (
         <div>
             <div className="home-page">
-                <div>
-                    <h1 className="home-page-logo">Help!</h1>
+                <div id="home-page-logo">
+                    <h1>Help!</h1>
                 </div>
                 <form className="search-bar" onSubmit={handleSearch}>
                     <input className="search-input" placeholder="Here to help"/>
