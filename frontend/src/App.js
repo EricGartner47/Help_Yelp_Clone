@@ -28,22 +28,22 @@ function App() {
           <Route exact path ="/">
             <HomePage />
           </Route>
-          <Route path="/login">
+          <Route exact path="/login">
             <LoginFormPage />
           </Route>
-          <Route path="/signup">
+          <Route exact path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="/create-hero">
+          <Route exact path="/create-hero">
             <CreateHeroPage />
           </Route>
           <Route exact path="/hero/edit/:id">
             <EditHeroPage />
           </Route>
-          <Route path="/hero/create-review/:id">
+          <Route exact path="/hero/create-review/:id">
             <CreateReviewPage />
           </Route>
-          <Route path="/hero/:id">
+          <Route exact path="/hero/:id">
             <HeroPage />
           </Route>
           <Route exact path="/review/edit/:id">

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
+// import * as sessionActions from '../../store/session';
 // import { Redirect } from 'react-router-dom';
 import { getHeros } from '../../store/hero';
 import "./HomePage.css"
@@ -42,7 +42,7 @@ function HomePage() {
                 {heros.map(hero => {
                     return (
                         <div id="hero-container">
-                            <NavLink key={hero.title} to={`/hero/${hero.id}`} className="hero-title">{hero.title}</NavLink>
+                            <NavLink key={hero.id} to={`/hero/${hero.id}`} className="hero-title">{hero.title}</NavLink>
                             <span className="hero-description">{hero.description}</span>
                         </div>
                         )

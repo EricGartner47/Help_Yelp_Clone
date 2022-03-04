@@ -1,0 +1,38 @@
+.fa-search {
+    font-size: 20px;
+}
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+#search-form {
+  display: flex;
+  flex-direction: row;
+}
+
+#header-search {
+  width: 100%;
+  padding: 3px;
+  border-radius: 100px;
+  outline: none;
+}
+
+.search-button {
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-left: -33px;
+}
+
+.search-button i {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
