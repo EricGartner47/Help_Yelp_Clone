@@ -41,7 +41,7 @@ function HomePage() {
                 <div>
                 {heros.map(hero => {
                     return (
-                        <div className="hero-container">
+                        <div id="hero-container">
                             <NavLink key={hero.title} to={`/hero/${hero.id}`} className="hero-title">{hero.title}</NavLink>
                             <span className="hero-description">{hero.description}</span>
                         </div>

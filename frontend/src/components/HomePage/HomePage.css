@@ -11,10 +11,8 @@
     background-position: 50%;
 }
 
-#footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#home-page {
+    color: white;
 }
 
 
@@ -22,7 +20,18 @@
 
 }
 
+#hero-container {
+    color: white;
+    font-size: large;
+    font-weight: 300;
+    background-color: #AB0020;
+}
 
+#footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 
 
