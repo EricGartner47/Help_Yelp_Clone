@@ -34,7 +34,7 @@ function HomePage() {
                 <div id="home-page-logo">
                     <h1>Help!</h1>
                 </div>
-                <form className="search-bar" onSubmit={handleSearch}>
+                <form id="search-bar" onSubmit={handleSearch}>
                     <input className="search-input" placeholder="Here to help"/>
                     <button className="fas fa-mask" type="submit" id="hero mask"/>
                 </form>
