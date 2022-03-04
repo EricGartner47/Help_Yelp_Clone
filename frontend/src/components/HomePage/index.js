@@ -19,10 +19,17 @@ function HomePage() {
         return state.hero.list.map(heroId => state.hero[heroId]);
     });
 
-    const handleSearch = (e) => {
-        e.preventDefault();
-        return dispatch
+    const filterHeros = (heros, query) => {
+        if (!query) {
+            return heros;
+        }
+
+        return heros.filter((hero) => {
+            const heroName = hero.title.toLowerCase();
+            return heroName.includes(query)
+        })
     }
+    const filteredHeros = filterHeros(heros, searchQuery);
 
     return (
         <div>
@@ -37,14 +44,20 @@ function HomePage() {
                     />
                 </div>
                 <div>
-                {heros.map(hero => {
-                    return (
-                        <div id="hero-container">
-                            <NavLink key={hero.id} to={`/hero/${hero.id}`} className="hero-title">{hero.title}</NavLink>
-                            <span className="hero-description">{hero.description}</span>
-                        </div>
+                    {filteredHeros? filteredHeros.map(hero => {
+                        return (
+                            <div id="hero-container">
+                                <NavLink key={hero.id} to={`/hero/${hero.id}`} className="hero-title">{hero.title}</NavLink>
+                                <span className="hero-description">{hero.description}</span>
+                            </div>
                         )
-                })}
+                    }) : heros.map(hero => {
+                        return (
+                            <div id="hero-container">
+                                <NavLink key={hero.id} to={`/hero/${hero.id}`} className="hero-title">{hero.title}</NavLink>
+                                <span className="hero-description">{hero.description}</span>
+                            </div>
+                            )})}
                 </div>
             </div>
             <div id="footer">
