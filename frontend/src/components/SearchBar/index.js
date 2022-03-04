@@ -18,6 +18,7 @@ const Search = ({ searchQuery, setSearchQuery }) => {
                 value={searchQuery}
                 onInput={(e) => setSearchQuery(e.target.value)}
                 type="text"
+                placeholder='Search by Hero Title'
                 id="header-search"
                 name="s"
             >
