@@ -1,13 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-// import * as sessionActions from '../../store/session';
-// import { Redirect } from 'react-router-dom';
 import { getHeros } from '../../store/hero';
+import Search from '../SearchBar';
 import "./HomePage.css"
 
 function HomePage() {
     const dispatch = useDispatch();
+    const { search } = window.location;
+    const query = new URLSearchParams(search).get('s');
+    const [searchQuery, setSearchQuery] = useState(query || '');
 
     useEffect(()=>{
         dispatch(getHeros())
@@ -16,12 +18,6 @@ function HomePage() {
     const heros = useSelector(state => {
         return state.hero.list.map(heroId => state.hero[heroId]);
     });
-
-
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     return dispatch(sessionActions.login({ credential: 'Demo-lition', password: 'password' }))
-    // }
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -34,10 +30,12 @@ function HomePage() {
                 <div id="home-page-logo">
                     <h1>Help!</h1>
                 </div>
-                <form id="search-bar" onSubmit={handleSearch}>
-                    <input className="search-input" placeholder="Here to help"/>
-                    <button className="fas fa-mask" type="submit" id="hero mask"/>
-                </form>
+                <div>
+                    <Search
+                        searchQuery={searchQuery}
+                        setSearchQuery={setSearchQuery}
+                    />
+                </div>
                 <div>
                 {heros.map(hero => {
                     return (
@@ -56,9 +54,6 @@ function HomePage() {
                         <a key="Linked In" className="linkedIn-link"href="https://www.linkedin.com/in/eric-gartner-731907a0/">Linked In</a>
                     </li>
                 </ul>
-                    {/* <form onSubmit={handleSubmit}>
-                        <button className="demo-button">Demo User</button>
-                    </form> */}
                 <div>
                 </div>
             </div>
