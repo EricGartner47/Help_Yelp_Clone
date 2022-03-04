@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import HomePage from "./components/HomePage"
+import SplashPage from "./components/SplashPage";
 import CreateHeroPage from "./components/CreateHeroPage";
 import HeroPage from "./components/HeroPage";
 import * as sessionActions from "./store/session";
@@ -25,32 +26,35 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route exact path ="/">
+          <Route path ="/app" exact={true}>
             <HomePage />
           </Route>
-          <Route exact path="/login">
+          <Route path="/login" exact={true}>
             <LoginFormPage />
           </Route>
-          <Route exact path="/signup">
+          <Route path="/signup" exact={true}>
             <SignupFormPage />
           </Route>
-          <Route exact path="/create-hero">
+          <Route path="/create-hero" exact={true}>
             <CreateHeroPage />
           </Route>
-          <Route exact path="/hero/edit/:id">
+          <Route path="/hero/edit/:id" exact={true}>
             <EditHeroPage />
           </Route>
-          <Route exact path="/hero/create-review/:id">
+          <Route path="/hero/create-review/:id" exact={true}>
             <CreateReviewPage />
           </Route>
-          <Route exact path="/hero/:id">
+          <Route path="/hero/:id" exact={true}>
             <HeroPage />
           </Route>
-          <Route exact path="/review/edit/:id">
+          <Route path="/review/edit/:id" exact={true}>
             <EditReviewPage />
           </Route>
-          <Route exact path="/review/:id">
+          <Route path="/review/:id" exact={true}>
             <ReviewPage />
+          </Route>
+          <Route path="/" exact={true}>
+            <SplashPage />
           </Route>
           <Route>
             <h2>Page Not Found</h2>
