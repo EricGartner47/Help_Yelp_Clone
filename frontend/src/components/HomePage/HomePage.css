@@ -1,9 +1,14 @@
-#home-page-logo {
+#home-page {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
-
+#footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 
 

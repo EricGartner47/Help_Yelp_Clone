@@ -30,7 +30,7 @@ function HomePage() {
 
     return (
         <div>
-            <div className="home-page">
+            <div id="home-page">
                 <div id="home-page-logo">
                     <h1>Help!</h1>
                 </div>
@@ -49,7 +49,7 @@ function HomePage() {
                 })}
                 </div>
             </div>
-            <div className="footer">
+            <div id="footer">
                 <ul className="created-by"> Created by Eric Gartner:
                     <li key="links">
                         <a key="GitHub" className="gitHub-link" href="https://github.com/EricGartner47">Github</a>
