@@ -1,11 +1,18 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import * as sessionActions from '../../store/session';
+import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
+  const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    return dispatch(sessionActions.login({ credential: 'Demo-lition', password: 'password' }))
+}
 
   let sessionLinks;
   if (sessionUser) {
@@ -17,10 +24,13 @@ function Navigation({ isLoaded }){
     );
   } else {
     sessionLinks = (
-      <div id='sessionLinks'>
-        <NavLink to="/login" id="log-in-link">Log In</NavLink>
-        <NavLink to="/signup" id="sign-up-link">Sign Up</NavLink>
-      </div>
+        <div id='sessionLinks'>
+          <NavLink to="/login" id="log-in-link">Log In</NavLink>
+          <NavLink to="/signup" id="sign-up-link">Sign Up</NavLink>
+          <form onSubmit={handleSubmit}>
+            <button id="demo-button">Demo User</button>
+          </form>
+        </div>
     );
   }
 

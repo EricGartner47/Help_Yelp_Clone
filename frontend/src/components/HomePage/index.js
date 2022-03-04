@@ -18,10 +18,10 @@ function HomePage() {
     });
 
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        return dispatch(sessionActions.login({ credential: 'Demo-lition', password: 'password' }))
-    }
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     return dispatch(sessionActions.login({ credential: 'Demo-lition', password: 'password' }))
+    // }
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -56,9 +56,9 @@ function HomePage() {
                         <a key="Linked In" className="linkedIn-link"href="https://www.linkedin.com/in/eric-gartner-731907a0/">Linked In</a>
                     </li>
                 </ul>
-                    <form onSubmit={handleSubmit}>
+                    {/* <form onSubmit={handleSubmit}>
                         <button className="demo-button">Demo User</button>
-                    </form>
+                    </form> */}
                 <div>
                 </div>
             </div>
