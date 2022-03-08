@@ -18,7 +18,6 @@ function Navigation({ isLoaded }){
   if (sessionUser) {
     sessionLinks = (
       <div id="drop-down">
-        <NavLink to="/create-hero">Create a Hero Page</NavLink>
         <ProfileButton user={sessionUser} />
       </div>
     );

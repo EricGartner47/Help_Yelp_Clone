@@ -18,7 +18,7 @@ const SplashPage = () => {
             <div>
                 <div>
                     <h1>Welcome to Help!</h1>
-                    <h2>A place to leave reviews of your heroes</h2>
+                    <h2>A place to create reviews of your favorite heroes</h2>
                 </div>
             </div>
             <div>
@@ -38,4 +38,4 @@ const SplashPage = () => {
     )
 }
 
-export default SplashPage; 
+export default SplashPage;

@@ -5,8 +5,13 @@ html {
 
 body {
     margin: 0px;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 a {
     text-decoration: none;
+}
+
+a:visited {
+    color: black;
 }

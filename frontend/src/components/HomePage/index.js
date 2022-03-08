@@ -43,6 +43,9 @@ function HomePage() {
                     <div id="home-page-logo">
                         <h1>Help!</h1>
                     </div>
+                    <div id='create-hero-container'>
+                        <NavLink to="/create-hero">Create a Hero Page</NavLink>
+                    </div>
                     <div>
                         <Search
                             searchQuery={searchQuery}
@@ -66,7 +69,7 @@ function HomePage() {
                                 )})}
                     </div>
                 </div>
-                <div id="footer">
+                {/* <div id="footer">
                     <ul className="created-by"> Created by Eric Gartner:
                         <li key="links">
                             <a key="GitHub" className="gitHub-link" href="https://github.com/EricGartner47">Github</a>
@@ -75,7 +78,7 @@ function HomePage() {
                     </ul>
                     <div>
                     </div>
-                </div>
+                </div> */}
             </div>
         )
     } else return (
