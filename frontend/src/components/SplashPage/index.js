@@ -22,15 +22,23 @@ const SplashPage = () => {
                 </div>
             </div>
             <div>
-                <div>
-                    <div>
-                        Eric Gartner
-                    </div>
-                    <div>
-                        <a className="gitHub-link-footer-link" href="https://github.com/EricGartner47">Github</a>
-                    </div>
-                    <div>
-                        <a className="linkedIn-link-footer-link"href="https://www.linkedin.com/in/eric-gartner-731907a0/">LinkedIn</a>
+                <div id='about-section'>
+                    <div id="about-wrapper">
+                        <div id='arrange'>
+                            <div id='column-one'>
+                                <div id='name'>
+                                    Eric Gartner
+                                </div>
+                                <ul id='about-section-list'>
+                                    <li>
+                                        <a className="gitHub-link-footer-link" href="https://github.com/EricGartner47">Github</a>
+                                    </li>
+                                    <li>
+                                        <a className="linkedIn-link-footer-link"href="https://www.linkedin.com/in/eric-gartner-731907a0/">LinkedIn</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -39,5 +47,3 @@ const SplashPage = () => {
 }
 
 export default SplashPage;
-
-

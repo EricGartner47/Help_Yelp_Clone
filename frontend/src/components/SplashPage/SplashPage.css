@@ -1,0 +1,56 @@
+#about-section {
+    padding: 60px 0;
+    background-color: #f0f0f0;
+    border-color: #ebebeb;
+    border: 0;
+}
+
+#about-wrapper {
+    box-sizing: border-box;
+    width: 100%;
+    margin: auto;
+    padding: 0 40px;
+    border: 0;
+    vertical-align: baseline;
+}
+
+#arrange {
+    margin-left: -16px;
+    margin-right: -16px;
+    display: flex;
+    border-collapse: separate;
+    border-spacing: 32px 0;
+    min-width: 100%;
+    table-layout: auto;
+}
+
+#column-one {
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+    display: block;
+    margin-left: 12px;
+    margin-right: 12px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-sizing: border-box;
+}
+
+#name {
+    margin-bottom: 16px!important;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: bold;
+    color: rgba(45,46,47,1);
+    text-align: left;
+}
+
+.gitHub-link-footer-link {
+    margin-bottom: 8px!important;
+}
+
+#about-section-list {
+    list-style: none;
+    margin-left: -32px;
+    margin-right: -32px;
+}
