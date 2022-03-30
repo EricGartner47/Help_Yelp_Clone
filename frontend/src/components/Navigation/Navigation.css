@@ -1,6 +1,9 @@
 #nav-bar {
     margin: 8px;
-    padding: 0px;
+    padding-top: 24px;
+    padding-right: 40px;
+    padding-bottom: 0px;
+    padding-left: 40px;
     border: 0px;
     display: flex;
     justify-content: space-between;
@@ -14,6 +17,12 @@
     border: 1px solid rgba(200,201,202,1);
     color: rgba(45,46,47,1);
     margin: 12px;
+
+}
+
+#log-in-link:hover {
+    transition: all 0.8s;
+    background-color: rgba(200,201,202,1);
 }
 
 #sign-up-link {
@@ -24,6 +33,11 @@
     margin: 12px;
 }
 
+#sign-up-link:hover {
+    transition: all 0.8s;
+    background-color: rgba(253,7,7,1);
+}
+
 #home-page-link {
     font-size: 30px;
     font-weight: 600;
@@ -31,11 +45,11 @@
 
 #demo-button{
     cursor: pointer;
+    margin: 12px;
 }
 
 #sessionLinks {
     display: flex;
-    margin: 12px;
     align-items: center;
 }
 
