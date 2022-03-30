@@ -8,18 +8,20 @@
 
 
 #log-in-link {
-    padding: 5px;
+    padding: 8px 16px;
     border-radius: 4px;
     cursor: pointer;
     border: 1px solid rgba(200,201,202,1);
     color: rgba(45,46,47,1);
+    margin: 12px;
 }
 
 #sign-up-link {
-    padding: 5px;
+    padding: 8px 16px;
     border-radius: 4px;
     background-color: rgba(224,7,7,1);
     color: rgba(255,255,255,1);
+    margin: 12px;
 }
 
 #home-page-link {
@@ -33,6 +35,8 @@
 
 #sessionLinks {
     display: flex;
+    margin: 12px;
+    align-items: center;
 }
 
 
