@@ -26,9 +26,11 @@ function Navigation({ isLoaded }){
         <div id='sessionLinks'>
           <NavLink to="/login" id="log-in-link">Log In</NavLink>
           <NavLink to="/signup" id="sign-up-link">Sign Up</NavLink>
-          <form onSubmit={handleSubmit}>
-            <button id="demo-button">Demo User</button>
-          </form>
+          <div>
+            <form onSubmit={handleSubmit}>
+              <button id="demo-button">Demo User</button>
+            </form>
+          </div>
         </div>
     );
   }

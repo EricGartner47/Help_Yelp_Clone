@@ -9,15 +9,30 @@
 
 #log-in-link {
     padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid rgba(200,201,202,1);
+    color: rgba(45,46,47,1);
 }
 
 #sign-up-link {
     padding: 5px;
+    border-radius: 4px;
+    background-color: rgba(224,7,7,1);
+    color: rgba(255,255,255,1);
 }
 
 #home-page-link {
     font-size: 30px;
     font-weight: 600;
+}
+
+#demo-button{
+    cursor: pointer;
+}
+
+#sessionLinks {
+    display: flex;
 }
 
 
