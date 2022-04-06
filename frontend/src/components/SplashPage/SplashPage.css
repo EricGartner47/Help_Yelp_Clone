@@ -67,3 +67,16 @@
 #splash-super-content-container {
     min-width: 1020px;
 }
+
+#splash-page-copy{
+    font-size: 16px;
+    line-height: 1.3125em;
+    margin-bottom: 24px;
+}
+
+#features-container{
+    display: block;
+    line-height: 1;
+    text-align: left;
+    list-style: none;
+}

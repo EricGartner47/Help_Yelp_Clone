@@ -22,9 +22,20 @@ const SplashPage = () => {
                         <br></br>
                         Leave your review on Help!
                     </h1>
-                    <p>
+                    <p id='splash-page-copy'>
                         Help is the fastest and easiest way to search for your favorite heroes. Log in or Sign Up now to get started.
                     </p>
+                    <ul id='features-container'>
+                        <li>
+                            Write reviews
+                        </li>
+                        <li>
+                            Read reviews
+                        </li>
+                        <li>
+                            View average rating
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div>
