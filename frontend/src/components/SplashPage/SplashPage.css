@@ -80,3 +80,13 @@
     text-align: left;
     list-style: none;
 }
+
+#splash-page-header{
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 1.2em;
+    color: #333;
+    padding-top: 6px;
+}
