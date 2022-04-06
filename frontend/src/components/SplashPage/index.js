@@ -15,10 +15,16 @@ const SplashPage = () => {
 
     return (
         <>
-            <div>
-                <div>
-                    <h1>Welcome to Help!</h1>
-                    <h2>A place to create reviews of your favorite heroes</h2>
+            <div id='splash-super-content-container'>
+                <div id='splash-page-content-container'>
+                    <h1>
+                        Recently recused?
+                        <br></br>
+                        Leave your review on Help!
+                    </h1>
+                    <p>
+                        Help is the fastest and easiest way to search for your favorite heroes. Log in or Sign Up now to get started.
+                    </p>
                 </div>
             </div>
             <div>

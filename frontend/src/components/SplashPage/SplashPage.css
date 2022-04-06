@@ -54,3 +54,16 @@
     margin-left: -32px;
     margin-right: -32px;
 }
+
+#splash-page-content-container {
+    padding-top: 15px;
+    padding-bottom: 36px;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 960px;
+    margin: 0 auto;
+}
+
+#splash-super-content-container {
+    min-width: 1020px;
+}
