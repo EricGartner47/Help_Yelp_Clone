@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Dropdown from 'react-bootstrap/Dropdown'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import './Navigation.css'
 
-function ProfileButton({ user }) {
+function ProfileButton() {
+  const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
 
@@ -32,16 +33,19 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={openMenu}>
-        <i className="fas fa-mask" ></i>
-      </button>
+      <div onClick={openMenu}>
+        <i className="fas fa-mask"></i><i className="fas fa-angle-down"></i>
+      </div>
       {showMenu && (
         <ul className="profile-dropdown">
-          <li>{user.username}</li>
-          <li>{user.email}</li>
           <li>
-            <button onClick={logout} className="logout-button">Log Out</button>
+            <div></div>
+            <div>
+              <span>{user.username}</span>
+              <span>{user.email}</span>
+            </div>
           </li>
+            <button onClick={logout} className="logout-button">Log Out</button>
         </ul>
       )}
     </>
