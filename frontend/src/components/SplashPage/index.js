@@ -18,7 +18,7 @@ const SplashPage = () => {
             <div id='splash-super-content-container'>
                 <div id='splash-page-content-container'>
                     <h1 id='splash-page-header'>
-                        Recently recused?
+                        Recently rescued?
                         <br></br>
                         Leave your review on Help!
                     </h1>
